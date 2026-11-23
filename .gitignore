@@ -30,8 +30,8 @@ env/
 venv/
 .venv/
 db.sqlite3
-media/
-backend/media/
+/backend/media/
+!public/media/
 cloudflared.exe
 *.exe
 *.zip

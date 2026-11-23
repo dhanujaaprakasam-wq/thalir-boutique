@@ -29,362 +29,2298 @@ export const CATEGORIES = [
 
 export const INITIAL_PRODUCTS = [
   {
-    id: "tb-sar-batik-001",
-    code: "TB-SAR-BATIK-001",
-    name: "Pure Cotton Handcrafted Batik Saree",
-    category: "sarees",
-    categoryName: "Sarees",
-    basePrice: 789,
-    originalPrice: 1299,
-    discount: "39% OFF",
-    tag: "New Launch",
-    description: "Authentic handcrafted pure cotton Batik print saree featuring traditional artisanal floral wax-resist motifs and matching blouse piece. Lightweight, breathable, and comfortable for festive, office, and daily wear.",
-    fabric: "100% Pure Mul Cotton Batik",
-    blouseIncluded: true,
-    blouseDetails: "Running Batik printed blouse piece included (0.8m)",
-    length: "6.2 Meters (with blouse)",
-    care: "First wash gentle hand wash separately",
-    defaultColor: "Rani Pink Batik",
-    variants: [
+    "id": "tb-sar-1124",
+    "dbId": 23,
+    "code": "TB-SAR-1124",
+    "productCode": "TB-SAR-1124",
+    "name": "Kanjivaram Soft Silk Saree",
+    "category": "sarees",
+    "categoryName": "Sarees",
+    "basePrice": 890,
+    "price": 890,
+    "originalPrice": 1230,
+    "discount": "28% OFF",
+    "tag": "New Arrival",
+    "description": "Opulent traditional Kanjivaram soft silk saree adorned with classic temple zari borders, rich contrast pallu, and timeless bridal motifs. Unmatched elegance for traditional functions, weddings, and auspicious rituals.",
+    "fabric": "Kanjivaram Soft Silk with Rich Zari",
+    "length": "6.3m (5.5m saree + 0.8m running blouse piece)",
+    "care": "Dry clean only to maintain pure zari finish and soft silk luster. Wrap in breathable cotton cloth.",
+    "defaultColor": "Emerald Green",
+    "sizes": [
+      "Free Size"
+    ],
+    "image": "/media/products/TB-SAR-1124_01_3e40614310d5.jpg",
+    "images": [
+      "/media/products/TB-SAR-1124_gallery_img1_37461d72275f.jpg",
+      "/media/products/TB-SAR-1124_gallery_img2_49efcfb77db0.jpg",
+      "/media/products/TB-SAR-1124_01_3e40614310d5.jpg",
+      "/media/products/TB-SAR-1124_01_img2_934d7de7cefb.jpg"
+    ],
+    "inStock": true,
+    "isSoldOut": false,
+    "totalStock": 1,
+    "variants": [
       {
-        colorName: "Rani Pink Batik",
-        colorCode: "#C2185B",
-        image: "/assets/images/media_1791353262893.jpg",
-        inStock: true,
-        stockQty: 12
-      },
-      {
-        colorName: "Charcoal Black Batik",
-        colorCode: "#2C3E50",
-        image: "/assets/images/media_1791353262899.jpg",
-        inStock: true,
-        stockQty: 10
-      },
-      {
-        colorName: "Indigo Blue Batik",
-        colorCode: "#1E3A8A",
-        image: "/assets/images/media_1791353262907.jpg",
-        inStock: true,
-        stockQty: 10
-      },
-      {
-        colorName: "Mustard Yellow Batik",
-        colorCode: "#D97706",
-        image: "/assets/images/media_1791353262915.jpg",
-        inStock: true,
-        stockQty: 10
+        "id": 186,
+        "code": "TB-SAR-1124-01",
+        "productCode": "TB-SAR-1124-01",
+        "product_code": "TB-SAR-1124-01",
+        "colorName": "Emerald Green",
+        "colorCode": "#0D5C3A",
+        "image": "/media/products/TB-SAR-1124_01_3e40614310d5.jpg",
+        "images": [
+          "/media/products/TB-SAR-1124_01_3e40614310d5.jpg",
+          "/media/products/TB-SAR-1124_01_img2_934d7de7cefb.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
       }
     ]
   },
   {
-    id: "tb-sar-001",
-    code: "TB-SAR-001",
-    name: "Kanjivaram Silk Zari Border Saree",
-    category: "sarees",
-    categoryName: "Sarees",
-    basePrice: 2499,
-    originalPrice: 3999,
-    discount: "37% OFF",
-    tag: "Trending",
-    description: "Luxurious soft silk Kanjivaram saree adorned with intricate rich golden zari weaving, delicate contrast border, and grand pallu. Perfect for weddings, festivities, and special occasions.",
-    fabric: "Soft Silk with Gold Zari",
-    blouseIncluded: true,
-    blouseDetails: "Matching unstitched blouse piece (0.8m) included",
-    length: "6.3 Meters (with blouse)",
-    care: "Dry clean recommended",
-    defaultColor: "Emerald Green",
-    variants: [
+    "id": "tb-sar-7403",
+    "dbId": 22,
+    "code": "TB-SAR-7403",
+    "productCode": "TB-SAR-7403",
+    "name": "Kanjivaram Soft Silk Saree",
+    "category": "sarees",
+    "categoryName": "Sarees",
+    "basePrice": 1400,
+    "price": 1400,
+    "originalPrice": 1940,
+    "discount": "28% OFF",
+    "tag": "Trending",
+    "description": "Opulent traditional Kanjivaram soft silk saree adorned with classic temple zari borders, rich contrast pallu, and timeless bridal motifs. Unmatched elegance for traditional functions, weddings, and auspicious rituals.",
+    "fabric": "Kanjivaram Soft Silk with Rich Zari",
+    "length": "6.3m (5.5m saree + 0.8m running blouse piece)",
+    "care": "Dry clean only to maintain pure zari finish and soft silk luster. Wrap in breathable cotton cloth.",
+    "defaultColor": "Royal Blue",
+    "sizes": [
+      "Free Size"
+    ],
+    "image": "/media/products/TB-SAR-7403_01_e1f37c859fdf.jpg",
+    "images": [
+      "/media/products/TB-SAR-7403_01_e1f37c859fdf.jpg",
+      "/media/products/TB-SAR-7403_02_db5f1fe3765b.jpg",
+      "/media/products/TB-SAR-7403_03_a699c204b0ac.jpg",
+      "/media/products/TB-SAR-7403_04_bf85d467d1a8.jpg",
+      "/media/products/TB-SAR-7403_05_6e5caf2ba205.jpg",
+      "/media/products/TB-SAR-7403_06_d46539f5cd2b.jpg",
+      "/media/products/TB-SAR-7403_07_83a19eab74b7.jpg"
+    ],
+    "inStock": true,
+    "isSoldOut": false,
+    "totalStock": 7,
+    "variants": [
       {
-        colorName: "Emerald Green",
-        colorCode: "#0D5C3A",
-        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
-        inStock: true,
-        stockQty: 8
+        "id": 178,
+        "code": "TB-SAR-7403-01",
+        "productCode": "TB-SAR-7403-01",
+        "product_code": "TB-SAR-7403-01",
+        "colorName": "Royal Blue",
+        "colorCode": "#1D4ED8",
+        "image": "/media/products/TB-SAR-7403_01_e1f37c859fdf.jpg",
+        "images": [
+          "/media/products/TB-SAR-7403_01_e1f37c859fdf.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
       },
       {
-        colorName: "Rani Pink",
-        colorCode: "#C2185B",
-        image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
-        inStock: true,
-        stockQty: 5
+        "id": 179,
+        "code": "TB-SAR-7403-02",
+        "productCode": "TB-SAR-7403-02",
+        "product_code": "TB-SAR-7403-02",
+        "colorName": "Plum / Burgundy",
+        "colorCode": "#701A75",
+        "image": "/media/products/TB-SAR-7403_02_db5f1fe3765b.jpg",
+        "images": [
+          "/media/products/TB-SAR-7403_02_db5f1fe3765b.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
       },
       {
-        colorName: "Royal Mustard",
-        colorCode: "#E5A910",
-        image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
-        inStock: true,
-        stockQty: 6
+        "id": 180,
+        "code": "TB-SAR-7403-03",
+        "productCode": "TB-SAR-7403-03",
+        "product_code": "TB-SAR-7403-03",
+        "colorName": "Rani Pink",
+        "colorCode": "#D81159",
+        "image": "/media/products/TB-SAR-7403_03_a699c204b0ac.jpg",
+        "images": [
+          "/media/products/TB-SAR-7403_03_a699c204b0ac.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
       },
       {
-        colorName: "Wine Maroon",
-        colorCode: "#6B1D2F",
-        image: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&q=80",
-        inStock: true,
-        stockQty: 4
+        "id": 181,
+        "code": "TB-SAR-7403-04",
+        "productCode": "TB-SAR-7403-04",
+        "product_code": "TB-SAR-7403-04",
+        "colorName": "Chocolate Brown",
+        "colorCode": "#451A03",
+        "image": "/media/products/TB-SAR-7403_04_bf85d467d1a8.jpg",
+        "images": [
+          "/media/products/TB-SAR-7403_04_bf85d467d1a8.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 182,
+        "code": "TB-SAR-7403-05",
+        "productCode": "TB-SAR-7403-05",
+        "product_code": "TB-SAR-7403-05",
+        "colorName": "Jet Black",
+        "colorCode": "#1A1A1A",
+        "image": "/media/products/TB-SAR-7403_05_6e5caf2ba205.jpg",
+        "images": [
+          "/media/products/TB-SAR-7403_05_6e5caf2ba205.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 183,
+        "code": "TB-SAR-7403-06",
+        "productCode": "TB-SAR-7403-06",
+        "product_code": "TB-SAR-7403-06",
+        "colorName": "Peacock Blue",
+        "colorCode": "#005F73",
+        "image": "/media/products/TB-SAR-7403_06_d46539f5cd2b.jpg",
+        "images": [
+          "/media/products/TB-SAR-7403_06_d46539f5cd2b.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 184,
+        "code": "TB-SAR-7403-07",
+        "productCode": "TB-SAR-7403-07",
+        "product_code": "TB-SAR-7403-07",
+        "colorName": "Rani Pink",
+        "colorCode": "#D81159",
+        "image": "/media/products/TB-SAR-7403_07_83a19eab74b7.jpg",
+        "images": [
+          "/media/products/TB-SAR-7403_07_83a19eab74b7.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
       }
     ]
   },
   {
-    id: "tb-sar-002",
-    code: "TB-SAR-002",
-    name: "Banarasi Organza Floral Pastel Saree",
-    category: "sarees",
-    categoryName: "Sarees",
-    basePrice: 1850,
-    originalPrice: 2800,
-    discount: "34% OFF",
-    tag: "Bestseller",
-    description: "Feather-light sheer organza silk saree featuring delicate silver zari buttis, scenic hand-painted floral motifs, and scalloped embroidery borders.",
-    fabric: "Pure Tissue Organza",
-    blouseIncluded: true,
-    blouseDetails: "Contrast brocade blouse piece included",
-    length: "5.5m Saree + 0.8m Blouse",
-    care: "Gentle hand wash / Dry clean",
-    defaultColor: "Lavender Blush",
-    variants: [
+    "id": "tb-sar-8405",
+    "dbId": 21,
+    "code": "TB-SAR-8405",
+    "productCode": "TB-SAR-8405",
+    "name": "Kanjivaram Soft Silk Saree",
+    "category": "sarees",
+    "categoryName": "Sarees",
+    "basePrice": 550,
+    "price": 550,
+    "originalPrice": 760,
+    "discount": "28% OFF",
+    "tag": "Trending",
+    "description": "Opulent traditional Kanjivaram soft silk saree adorned with classic temple zari borders, rich contrast pallu, and timeless bridal motifs. Unmatched elegance for traditional functions, weddings, and auspicious rituals.",
+    "fabric": "Kanjivaram Soft Silk with Rich Zari",
+    "length": "6.3m (5.5m saree + 0.8m running blouse piece)",
+    "care": "Dry clean only to maintain pure zari finish and soft silk luster. Wrap in breathable cotton cloth.",
+    "defaultColor": "Emerald Green",
+    "sizes": [
+      "Free Size"
+    ],
+    "image": "/media/products/p21_tb-sar-8405-01_5ed827c12f04.jpg",
+    "images": [
+      "/media/products/p21_tb-sar-8405-01_5ed827c12f04.jpg",
+      "/media/products/p11_tb-sar-8303-01_cd55847d99f3.jpg",
+      "/media/products/p11_tb-sar-8303-02_97967b31e6fa.jpg"
+    ],
+    "inStock": true,
+    "isSoldOut": false,
+    "totalStock": 1,
+    "variants": [
       {
-        colorName: "Lavender Blush",
-        colorCode: "#9C8EB9",
-        image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
-        inStock: true,
-        stockQty: 10
-      },
-      {
-        colorName: "Mint Green",
-        colorCode: "#86B39C",
-        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
-        inStock: true,
-        stockQty: 7
-      },
-      {
-        colorName: "Powder Peach",
-        colorCode: "#E5A48F",
-        image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
-        inStock: true,
-        stockQty: 9
+        "id": 177,
+        "code": "TB-SAR-8405-01",
+        "productCode": "TB-SAR-8405-01",
+        "product_code": "TB-SAR-8405-01",
+        "colorName": "Silver Grey",
+        "colorCode": "#9CA3AF",
+        "image": "/media/products/p21_tb-sar-8405-01_5ed827c12f04.jpg",
+        "images": [
+          "/media/products/p21_tb-sar-8405-01_5ed827c12f04.jpg",
+          "/media/products/p11_tb-sar-8303-01_cd55847d99f3.jpg",
+          "/media/products/p11_tb-sar-8303-02_97967b31e6fa.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
       }
     ]
   },
   {
-    id: "tb-kur-001",
-    code: "TB-KUR-001",
-    name: "Anarkali Embroidered Kurti with Dupatta",
-    category: "kurtis",
-    categoryName: "Kurtis",
-    basePrice: 1299,
-    originalPrice: 1999,
-    discount: "35% OFF",
-    tag: "New Arrival",
-    description: "Flared Rayon Anarkali Kurti with intricate neck thread embroidery, bell sleeves, and matching organza printed dupatta. Ultra-comfortable festive wear.",
-    fabric: "Premium Heavy Rayon & Organza",
-    sizes: ["M", "L", "XL", "XXL", "3XL"],
-    care: "Machine wash with like colors",
-    defaultColor: "Teal Blue",
-    variants: [
+    "id": "tb-sar-4944",
+    "dbId": 20,
+    "code": "TB-SAR-4944",
+    "productCode": "TB-SAR-4944",
+    "name": "Pure Mulmul Cotton Handloom Saree",
+    "category": "sarees",
+    "categoryName": "Sarees",
+    "basePrice": 650,
+    "price": 650,
+    "originalPrice": 900,
+    "discount": "28% OFF",
+    "tag": "",
+    "description": "Feather-light 100-count pure mulmul cotton saree offering supreme breathability and effortless soft draping. Designed for humid tropical summers, office wear, and relaxed elegance.",
+    "fabric": "Pure Mulmul Cotton (100 Count)",
+    "length": "6.3m (5.5m saree + 0.8m running blouse piece)",
+    "care": "Gentle cold water hand wash separately. Mild starch optional for crisp drape. Dry in shade.",
+    "defaultColor": "Mehendi Green",
+    "sizes": [
+      "Free Size"
+    ],
+    "image": "/media/products/p20_tb-sar-4944-01_e5b75a5ecb14.jpg",
+    "images": [
+      "/media/products/p20_tb-sar-4944-01_e5b75a5ecb14.jpg"
+    ],
+    "inStock": true,
+    "isSoldOut": false,
+    "totalStock": 1,
+    "variants": [
       {
-        colorName: "Teal Blue",
-        colorCode: "#176B87",
-        image: "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format&fit=crop&w=800&q=80",
-        inStock: true
-      },
-      {
-        colorName: "Mustard Yellow",
-        colorCode: "#D99B26",
-        image: "https://images.unsplash.com/photo-1614088445100-a681329a6744?auto=format&fit=crop&w=800&q=80",
-        inStock: true
-      },
-      {
-        colorName: "Coral Red",
-        colorCode: "#C84B31",
-        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
-        inStock: true
+        "id": 175,
+        "code": "TB-SAR-4944-01",
+        "productCode": "TB-SAR-4944-01",
+        "product_code": "TB-SAR-4944-01",
+        "colorName": "Mehendi Green",
+        "colorCode": "#588157",
+        "image": "/media/products/p20_tb-sar-4944-01_e5b75a5ecb14.jpg",
+        "images": [
+          "/media/products/p20_tb-sar-4944-01_e5b75a5ecb14.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
       }
     ]
   },
   {
-    id: "tb-kur-002",
-    code: "TB-KUR-002",
-    name: "Straight Cut Cotton Daily Wear Kurti Set",
-    category: "kurtis",
-    categoryName: "Kurtis",
-    basePrice: 849,
-    originalPrice: 1399,
-    discount: "39% OFF",
-    tag: "Popular",
-    description: "Breathable 100% pure cotton straight kurti with side slits, wooden button detailing, and paired straight cotton pants. Ideal for office and daily casuals.",
-    fabric: "100% Pure Cotton",
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    care: "Hand wash or gentle cycle",
-    defaultColor: "Indigo Navy",
-    variants: [
+    "id": "tb-sar-1020",
+    "dbId": 19,
+    "code": "TB-SAR-1020",
+    "productCode": "TB-SAR-1020",
+    "name": "Chanderi Silk Cotton Handloom Saree",
+    "category": "sarees",
+    "categoryName": "Sarees",
+    "basePrice": 580,
+    "price": 580,
+    "originalPrice": 810,
+    "discount": "28% OFF",
+    "tag": "",
+    "description": "Subtle and sophisticated Chanderi silk cotton saree distinguished by its sheer texture, fine handloom feel, and delicate golden zari buttis. Perfect for pooja celebrations and formal day events.",
+    "fabric": "Chanderi Silk Cotton with Gold Borders",
+    "length": "6.3m (5.5m saree + 0.8m running blouse piece)",
+    "care": "First wash dry clean recommended. Subsequent cold water gentle hand wash. Dry in shade.",
+    "defaultColor": "Rani Pink",
+    "sizes": [
+      "Free Size"
+    ],
+    "image": "/media/products/p19_tb-sar-1020-01_02075993c9ca.jpg",
+    "images": [
+      "/media/products/p19_tb-sar-1020-01_02075993c9ca.jpg"
+    ],
+    "inStock": true,
+    "isSoldOut": false,
+    "totalStock": 1,
+    "variants": [
       {
-        colorName: "Indigo Navy",
-        colorCode: "#1A365D",
-        image: "https://images.unsplash.com/photo-1614088445100-a681329a6744?auto=format&fit=crop&w=800&q=80",
-        inStock: true
-      },
-      {
-        colorName: "Sage Olive",
-        colorCode: "#556B2F",
-        image: "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format&fit=crop&w=800&q=80",
-        inStock: true
+        "id": 174,
+        "code": "TB-SAR-1020-01",
+        "productCode": "TB-SAR-1020-01",
+        "product_code": "TB-SAR-1020-01",
+        "colorName": "Rani Pink",
+        "colorCode": "#D81159",
+        "image": "/media/products/p19_tb-sar-1020-01_02075993c9ca.jpg",
+        "images": [
+          "/media/products/p19_tb-sar-1020-01_02075993c9ca.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
       }
     ]
   },
   {
-    id: "tb-blo-001",
-    code: "TB-BLO-001",
-    name: "Pure Cotton & Soft Silk Blouse Piece (1 Meter)",
-    category: "blouse-materials",
-    categoryName: "Blouse Materials",
-    basePrice: 299,
-    originalPrice: 499,
-    discount: "40% OFF",
-    tag: "Essential",
-    description: "Premium quality unstitched pure cotton and soft silk blouse material piece (1.0 meter full cut). Breathable, fast-color, and ideal for regular and festive saree matching.",
-    fabric: "100% Pure Combed Cotton & Soft Silk",
-    cutLength: "1.0 Meter full cut",
-    care: "Gentle machine / hand wash",
-    defaultColor: "Bridal Crimson Red",
-    variants: [
+    "id": "tb-sar-2007",
+    "dbId": 18,
+    "code": "TB-SAR-2007",
+    "productCode": "TB-SAR-2007",
+    "name": "Kalamkari Handblock Printed Saree",
+    "category": "sarees",
+    "categoryName": "Sarees",
+    "basePrice": 510,
+    "price": 510,
+    "originalPrice": 710,
+    "discount": "28% OFF",
+    "tag": "",
+    "description": "Heritage Kalamkari handblock printed saree inspired by timeless temple and folklore art. Created on breathable pure cotton with rich natural mineral dyes for an earthy, artistic appeal.",
+    "fabric": "Handcrafted Kalamkari Pure Cotton",
+    "length": "6.3m (5.5m saree + 0.8m running blouse piece)",
+    "care": "Gentle hand wash in cold water with mild liquid detergent. Line dry in shade.",
+    "defaultColor": "Rama Green / Teal",
+    "sizes": [
+      "Free Size"
+    ],
+    "image": "/media/products/p18_tb-sar-2007-01_79c71657be8b.jpg",
+    "images": [
+      "/media/products/p18_tb-sar-2007-01_79c71657be8b.jpg"
+    ],
+    "inStock": true,
+    "isSoldOut": false,
+    "totalStock": 1,
+    "variants": [
       {
-        colorName: "Bridal Crimson Red",
-        colorCode: "#990000",
-        image: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&q=80",
-        inStock: true
-      },
-      {
-        colorName: "Deep Royal Blue",
-        colorCode: "#0A2647",
-        image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
-        inStock: true
-      },
-      {
-        colorName: "Bottle Green",
-        colorCode: "#0B4619",
-        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
-        inStock: true
-      },
-      {
-        colorName: "Golden Yellow",
-        colorCode: "#D4AF37",
-        image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
-        inStock: true
+        "id": 173,
+        "code": "TB-SAR-2007-01",
+        "productCode": "TB-SAR-2007-01",
+        "product_code": "TB-SAR-2007-01",
+        "colorName": "Rama Green / Teal",
+        "colorCode": "#0D9488",
+        "image": "/media/products/p18_tb-sar-2007-01_79c71657be8b.jpg",
+        "images": [
+          "/media/products/p18_tb-sar-2007-01_79c71657be8b.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
       }
     ]
   },
   {
-    id: "tb-chu-001",
-    code: "TB-CHU-001",
-    name: "Chanderi Silk Embroidered Chudi Material Set",
-    category: "chudi-material",
-    categoryName: "Chudi Material",
-    basePrice: 1199,
-    originalPrice: 1899,
-    discount: "37% OFF",
-    tag: "Festive Special",
-    description: "Unstitched 3-piece luxury chudidhar dress material set: 2.5m Chanderi Silk embroidered top, 2m Santoon bottom/inner fabric, and 2.25m Banarasi zari border woven dupatta.",
-    fabric: "Chanderi Silk & Santoon with Woven Zari Dupatta",
-    cutLength: "Top: 2.5m | Bottom: 2.0m | Dupatta: 2.25m",
-    care: "Dry clean recommended",
-    defaultColor: "Peacock Blue",
-    variants: [
+    "id": "tb-sar-3192",
+    "dbId": 17,
+    "code": "TB-SAR-3192",
+    "productCode": "TB-SAR-3192",
+    "name": "Kanjivaram Soft Silk Saree",
+    "category": "sarees",
+    "categoryName": "Sarees",
+    "basePrice": 1850,
+    "price": 1850,
+    "originalPrice": 2560,
+    "discount": "28% OFF",
+    "tag": "Bestseller",
+    "description": "Exquisite geometric woven jacquard saree featuring intricate artisanal weaving motifs, rich textured body, and an elaborate pallu with matching running blouse piece. Perfect for festive celebrations, weddings, and party occasions.",
+    "fabric": "Kanjivaram Soft Silk with Rich Zari",
+    "length": "6.3m (5.5m saree + 0.8m running blouse piece)",
+    "care": "Dry clean only to maintain rich jacquard weave and delicate metallic sheen. Medium steam iron on reverse.",
+    "defaultColor": "Peacock Blue",
+    "sizes": [
+      "Free Size"
+    ],
+    "image": "/media/products/p17_tb-sar-3192-01_19ec518f29e3.jpg",
+    "images": [
+      "/media/products/p17_tb-sar-3192-01_19ec518f29e3.jpg",
+      "/media/products/p17_tb-sar-3192-02_20b8931dc0a7.jpg",
+      "/media/products/p17_tb-sar-3192-03_bcd20a955b61.jpg",
+      "/media/products/p17_tb-sar-3192-04_bbf46410e1c4.jpg",
+      "/media/products/p17_tb-sar-3192-05_55b3b66de4d4.jpg",
+      "/media/products/p17_tb-sar-3192-06_ff91081d610c.jpg",
+      "/media/products/p17_tb-sar-3192-07_95ff565f651c.jpg",
+      "/media/products/p17_tb-sar-3192-08_d83a8da2104e.jpg",
+      "/media/products/p17_tb-sar-3192-09_4cab90d63cc2.jpg",
+      "/media/products/p17_tb-sar-3192-10_620084a8e762.jpg"
+    ],
+    "inStock": true,
+    "isSoldOut": false,
+    "totalStock": 9,
+    "variants": [
       {
-        colorName: "Peacock Blue",
-        colorCode: "#0E8388",
-        image: "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format&fit=crop&w=800&q=80",
-        inStock: true
+        "id": 149,
+        "code": "TB-SAR-3192-01",
+        "productCode": "TB-SAR-3192-01",
+        "product_code": "TB-SAR-3192-01",
+        "colorName": "Peacock Blue",
+        "colorCode": "#005F73",
+        "image": "/media/products/p17_tb-sar-3192-01_19ec518f29e3.jpg",
+        "images": [
+          "/media/products/p17_tb-sar-3192-01_19ec518f29e3.jpg"
+        ],
+        "stockQty": 0,
+        "stock_qty": 0,
+        "inStock": false,
+        "in_stock": false
       },
       {
-        colorName: "Dusty Pink",
-        colorCode: "#D4A5A5",
-        image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
-        inStock: true
+        "id": 150,
+        "code": "TB-SAR-3192-02",
+        "productCode": "TB-SAR-3192-02",
+        "product_code": "TB-SAR-3192-02",
+        "colorName": "Plum / Burgundy",
+        "colorCode": "#701A75",
+        "image": "/media/products/p17_tb-sar-3192-02_20b8931dc0a7.jpg",
+        "images": [
+          "/media/products/p17_tb-sar-3192-02_20b8931dc0a7.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
       },
       {
-        colorName: "Royal Mustard",
-        colorCode: "#D99B26",
-        image: "https://images.unsplash.com/photo-1614088445100-a681329a6744?auto=format&fit=crop&w=800&q=80",
-        inStock: true
+        "id": 151,
+        "code": "TB-SAR-3192-03",
+        "productCode": "TB-SAR-3192-03",
+        "product_code": "TB-SAR-3192-03",
+        "colorName": "Lemon Yellow",
+        "colorCode": "#FACC15",
+        "image": "/media/products/p17_tb-sar-3192-03_bcd20a955b61.jpg",
+        "images": [
+          "/media/products/p17_tb-sar-3192-03_bcd20a955b61.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 152,
+        "code": "TB-SAR-3192-04",
+        "productCode": "TB-SAR-3192-04",
+        "product_code": "TB-SAR-3192-04",
+        "colorName": "Charcoal Grey",
+        "colorCode": "#334155",
+        "image": "/media/products/p17_tb-sar-3192-04_bbf46410e1c4.jpg",
+        "images": [
+          "/media/products/p17_tb-sar-3192-04_bbf46410e1c4.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 153,
+        "code": "TB-SAR-3192-05",
+        "productCode": "TB-SAR-3192-05",
+        "product_code": "TB-SAR-3192-05",
+        "colorName": "Olive Green",
+        "colorCode": "#65A30D",
+        "image": "/media/products/p17_tb-sar-3192-05_55b3b66de4d4.jpg",
+        "images": [
+          "/media/products/p17_tb-sar-3192-05_55b3b66de4d4.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 154,
+        "code": "TB-SAR-3192-06",
+        "productCode": "TB-SAR-3192-06",
+        "product_code": "TB-SAR-3192-06",
+        "colorName": "Chilli Red",
+        "colorCode": "#B91C1C",
+        "image": "/media/products/p17_tb-sar-3192-06_ff91081d610c.jpg",
+        "images": [
+          "/media/products/p17_tb-sar-3192-06_ff91081d610c.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 155,
+        "code": "TB-SAR-3192-07",
+        "productCode": "TB-SAR-3192-07",
+        "product_code": "TB-SAR-3192-07",
+        "colorName": "Peacock Blue",
+        "colorCode": "#005F73",
+        "image": "/media/products/p17_tb-sar-3192-07_95ff565f651c.jpg",
+        "images": [
+          "/media/products/p17_tb-sar-3192-07_95ff565f651c.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 156,
+        "code": "TB-SAR-3192-08",
+        "productCode": "TB-SAR-3192-08",
+        "product_code": "TB-SAR-3192-08",
+        "colorName": "Bottle Green",
+        "colorCode": "#064E3B",
+        "image": "/media/products/p17_tb-sar-3192-08_d83a8da2104e.jpg",
+        "images": [
+          "/media/products/p17_tb-sar-3192-08_d83a8da2104e.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 157,
+        "code": "TB-SAR-3192-09",
+        "productCode": "TB-SAR-3192-09",
+        "product_code": "TB-SAR-3192-09",
+        "colorName": "Haldi Yellow",
+        "colorCode": "#F59E0B",
+        "image": "/media/products/p17_tb-sar-3192-09_4cab90d63cc2.jpg",
+        "images": [
+          "/media/products/p17_tb-sar-3192-09_4cab90d63cc2.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 158,
+        "code": "TB-SAR-3192-10",
+        "productCode": "TB-SAR-3192-10",
+        "product_code": "TB-SAR-3192-10",
+        "colorName": "Rani Pink",
+        "colorCode": "#D81159",
+        "image": "/media/products/p17_tb-sar-3192-10_620084a8e762.jpg",
+        "images": [
+          "/media/products/p17_tb-sar-3192-10_620084a8e762.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
       }
     ]
   },
   {
-    id: "tb-ins-001",
-    code: "TB-INS-001",
-    name: "Pure Cotton 6-Cut Saree Inskirt (Petticoat)",
-    category: "inskirts",
-    categoryName: "Inskirts",
-    basePrice: 299,
-    originalPrice: 499,
-    discount: "40% OFF",
-    tag: "Essential",
-    description: "100% pure premium poplin cotton 6-cut saree inskirt (petticoat) with sturdy matching drawstring and interlock stitching. Available in a vast range of vibrant matching colors.",
-    fabric: "100% Poplin Cotton",
-    sizes: ["Free Size (Waist 28-38\")", "XL (Waist 38-44\")", "XXL (Waist 44-50\")"],
-    length: "38 Inches (Standard)",
-    care: "Regular hand / machine wash",
-    defaultColor: "Emerald Green",
-    variants: [
+    "id": "tb-sar-1340",
+    "dbId": 16,
+    "code": "TB-SAR-1340",
+    "productCode": "TB-SAR-1340",
+    "name": "Kalamkari Handblock Printed Saree",
+    "category": "sarees",
+    "categoryName": "Sarees",
+    "basePrice": 805,
+    "price": 805,
+    "originalPrice": 1120,
+    "discount": "28% OFF",
+    "tag": "",
+    "description": "Exquisite geometric woven jacquard saree featuring intricate artisanal weaving motifs, rich textured body, and an elaborate pallu with matching running blouse piece. Perfect for festive celebrations, weddings, and party occasions.",
+    "fabric": "Handcrafted Kalamkari Pure Cotton",
+    "length": "6.3m (5.5m saree + 0.8m running blouse piece)",
+    "care": "Dry clean only to maintain rich jacquard weave and delicate metallic sheen. Medium steam iron on reverse.",
+    "defaultColor": "Charcoal Grey",
+    "sizes": [
+      "Free Size"
+    ],
+    "image": "/media/products/p16_tb-sar-1340-01_aa984ee0d0bd.jpg",
+    "images": [
+      "/media/products/p16_tb-sar-1340-01_aa984ee0d0bd.jpg",
+      "/media/products/p16_tb-sar-1340-02_b59a8853421a.jpg",
+      "/media/products/p16_tb-sar-1340-03_d02fb84f5207.jpg",
+      "/media/products/p16_tb-sar-1340-04_f4d28cc60242.jpg",
+      "/media/products/p16_tb-sar-1340-05_a3ba2f64c8e1.jpg",
+      "/media/products/p16_tb-sar-1340-06_b54f30f3863d.jpg",
+      "/media/products/p16_tb-sar-1340-07_565697eab633.jpg",
+      "/media/products/p16_tb-sar-1340-08_0fdb3d0b811d.jpg",
+      "/media/products/p16_tb-sar-1340-09_75dd51a48bc9.jpg",
+      "/media/products/p16_tb-sar-1340-10_d173413491d0.jpg",
+      "/media/products/p16_tb-sar-1340-11_13858e298d0a.jpg",
+      "/media/products/p16_tb-sar-1340-12_895373596216.jpg",
+      "/media/products/p16_tb-sar-1340-13_429c6943480c.jpg",
+      "/media/products/p16_tb-sar-1340-14_d236eb20cd4c.jpg",
+      "/media/products/p16_tb-sar-1340-15_d136f0017b03.jpg",
+      "/media/products/p16_tb-sar-1340-16_22f3ba03b02f.jpg",
+      "/media/products/p16_tb-sar-1340-17_964ffebd5aca.jpg",
+      "/media/products/p16_tb-sar-1340-18_903ca7c27013.jpg",
+      "/media/products/p16_tb-sar-1340-19_6e32b9580510.jpg"
+    ],
+    "inStock": true,
+    "isSoldOut": false,
+    "totalStock": 19,
+    "variants": [
       {
-        colorName: "Emerald Green",
-        colorCode: "#0D5C3A",
-        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
-        inStock: true
+        "id": 89,
+        "code": "TB-SAR-1340-01",
+        "productCode": "TB-SAR-1340-01",
+        "product_code": "TB-SAR-1340-01",
+        "colorName": "Charcoal Grey",
+        "colorCode": "#334155",
+        "image": "/media/products/p16_tb-sar-1340-01_aa984ee0d0bd.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-01_aa984ee0d0bd.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
       },
       {
-        colorName: "Rani Pink",
-        colorCode: "#C2185B",
-        image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
-        inStock: true
+        "id": 90,
+        "code": "TB-SAR-1340-02",
+        "productCode": "TB-SAR-1340-02",
+        "product_code": "TB-SAR-1340-02",
+        "colorName": "Wine Maroon",
+        "colorCode": "#5F0F40",
+        "image": "/media/products/p16_tb-sar-1340-02_b59a8853421a.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-02_b59a8853421a.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
       },
       {
-        colorName: "Mustard Yellow",
-        colorCode: "#E5A910",
-        image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
-        inStock: true
+        "id": 91,
+        "code": "TB-SAR-1340-03",
+        "productCode": "TB-SAR-1340-03",
+        "product_code": "TB-SAR-1340-03",
+        "colorName": "Royal Blue",
+        "colorCode": "#1D4ED8",
+        "image": "/media/products/p16_tb-sar-1340-03_d02fb84f5207.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-03_d02fb84f5207.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
       },
       {
-        colorName: "Pure Black",
-        colorCode: "#1A1A1A",
-        image: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&q=80",
-        inStock: true
+        "id": 92,
+        "code": "TB-SAR-1340-04",
+        "productCode": "TB-SAR-1340-04",
+        "product_code": "TB-SAR-1340-04",
+        "colorName": "Plum / Burgundy",
+        "colorCode": "#701A75",
+        "image": "/media/products/p16_tb-sar-1340-04_f4d28cc60242.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-04_f4d28cc60242.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 93,
+        "code": "TB-SAR-1340-05",
+        "productCode": "TB-SAR-1340-05",
+        "product_code": "TB-SAR-1340-05",
+        "colorName": "Kumkum Red",
+        "colorCode": "#9B1D20",
+        "image": "/media/products/p16_tb-sar-1340-05_a3ba2f64c8e1.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-05_a3ba2f64c8e1.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 94,
+        "code": "TB-SAR-1340-06",
+        "productCode": "TB-SAR-1340-06",
+        "product_code": "TB-SAR-1340-06",
+        "colorName": "Charcoal Grey",
+        "colorCode": "#334155",
+        "image": "/media/products/p16_tb-sar-1340-06_b54f30f3863d.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-06_b54f30f3863d.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 95,
+        "code": "TB-SAR-1340-07",
+        "productCode": "TB-SAR-1340-07",
+        "product_code": "TB-SAR-1340-07",
+        "colorName": "Plum / Burgundy",
+        "colorCode": "#701A75",
+        "image": "/media/products/p16_tb-sar-1340-07_565697eab633.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-07_565697eab633.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 96,
+        "code": "TB-SAR-1340-08",
+        "productCode": "TB-SAR-1340-08",
+        "product_code": "TB-SAR-1340-08",
+        "colorName": "Wine Maroon",
+        "colorCode": "#5F0F40",
+        "image": "/media/products/p16_tb-sar-1340-08_0fdb3d0b811d.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-08_0fdb3d0b811d.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 97,
+        "code": "TB-SAR-1340-09",
+        "productCode": "TB-SAR-1340-09",
+        "product_code": "TB-SAR-1340-09",
+        "colorName": "Royal Blue",
+        "colorCode": "#1D4ED8",
+        "image": "/media/products/p16_tb-sar-1340-09_75dd51a48bc9.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-09_75dd51a48bc9.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 98,
+        "code": "TB-SAR-1340-10",
+        "productCode": "TB-SAR-1340-10",
+        "product_code": "TB-SAR-1340-10",
+        "colorName": "Kumkum Red",
+        "colorCode": "#9B1D20",
+        "image": "/media/products/p16_tb-sar-1340-10_d173413491d0.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-10_d173413491d0.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 99,
+        "code": "TB-SAR-1340-11",
+        "productCode": "TB-SAR-1340-11",
+        "product_code": "TB-SAR-1340-11",
+        "colorName": "Jet Black",
+        "colorCode": "#1A1A1A",
+        "image": "/media/products/p16_tb-sar-1340-11_13858e298d0a.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-11_13858e298d0a.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 100,
+        "code": "TB-SAR-1340-12",
+        "productCode": "TB-SAR-1340-12",
+        "product_code": "TB-SAR-1340-12",
+        "colorName": "Plum / Burgundy",
+        "colorCode": "#701A75",
+        "image": "/media/products/p16_tb-sar-1340-12_895373596216.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-12_895373596216.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 101,
+        "code": "TB-SAR-1340-13",
+        "productCode": "TB-SAR-1340-13",
+        "product_code": "TB-SAR-1340-13",
+        "colorName": "Hot Pink",
+        "colorCode": "#E0218A",
+        "image": "/media/products/p16_tb-sar-1340-13_429c6943480c.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-13_429c6943480c.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 102,
+        "code": "TB-SAR-1340-14",
+        "productCode": "TB-SAR-1340-14",
+        "product_code": "TB-SAR-1340-14",
+        "colorName": "Champagne Gold",
+        "colorCode": "#E2BF7D",
+        "image": "/media/products/p16_tb-sar-1340-14_d236eb20cd4c.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-14_d236eb20cd4c.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 103,
+        "code": "TB-SAR-1340-15",
+        "productCode": "TB-SAR-1340-15",
+        "product_code": "TB-SAR-1340-15",
+        "colorName": "Charcoal Grey",
+        "colorCode": "#334155",
+        "image": "/media/products/p16_tb-sar-1340-15_d136f0017b03.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-15_d136f0017b03.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 104,
+        "code": "TB-SAR-1340-16",
+        "productCode": "TB-SAR-1340-16",
+        "product_code": "TB-SAR-1340-16",
+        "colorName": "Wine Maroon",
+        "colorCode": "#5F0F40",
+        "image": "/media/products/p16_tb-sar-1340-16_22f3ba03b02f.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-16_22f3ba03b02f.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 105,
+        "code": "TB-SAR-1340-17",
+        "productCode": "TB-SAR-1340-17",
+        "product_code": "TB-SAR-1340-17",
+        "colorName": "Charcoal Grey",
+        "colorCode": "#334155",
+        "image": "/media/products/p16_tb-sar-1340-17_964ffebd5aca.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-17_964ffebd5aca.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 106,
+        "code": "TB-SAR-1340-18",
+        "productCode": "TB-SAR-1340-18",
+        "product_code": "TB-SAR-1340-18",
+        "colorName": "Royal Blue",
+        "colorCode": "#1D4ED8",
+        "image": "/media/products/p16_tb-sar-1340-18_903ca7c27013.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-18_903ca7c27013.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 107,
+        "code": "TB-SAR-1340-19",
+        "productCode": "TB-SAR-1340-19",
+        "product_code": "TB-SAR-1340-19",
+        "colorName": "Charcoal Grey",
+        "colorCode": "#334155",
+        "image": "/media/products/p16_tb-sar-1340-19_6e32b9580510.jpg",
+        "images": [
+          "/media/products/p16_tb-sar-1340-19_6e32b9580510.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
       }
     ]
   },
   {
-    id: "tb-nit-001",
-    code: "TB-NIT-001",
-    name: "Pure Cotton Printed Feeding & Comfort Nighty",
-    category: "night-wear",
-    categoryName: "Night Wear",
-    basePrice: 499,
-    originalPrice: 750,
-    discount: "33% OFF",
-    tag: "Daily Essential",
-    description: "Super soft, breathable pure cotton nighty with front zip for feeding convenience, side pockets, and shrinkage-proof fast colors. Guarantees supreme comfort.",
-    fabric: "100% Pure Combed Cotton",
-    sizes: ["L (Bust 42\")", "XL (Bust 44\")", "XXL (Bust 46\")", "Free Size"],
-    care: "Regular machine wash",
-    defaultColor: "Maroon Floral",
-    variants: [
+    "id": "tb-sar-7207",
+    "dbId": 15,
+    "code": "TB-SAR-7207",
+    "productCode": "TB-SAR-7207",
+    "name": "Geometric Woven Jacquard Soft Silk Saree",
+    "category": "sarees",
+    "categoryName": "Sarees",
+    "basePrice": 899,
+    "price": 899,
+    "originalPrice": 1250,
+    "discount": "28% OFF",
+    "tag": "",
+    "description": "Exquisite geometric woven jacquard saree featuring intricate artisanal weaving motifs, rich textured body, and an elaborate pallu with matching running blouse piece. Perfect for festive celebrations, weddings, and party occasions.",
+    "fabric": "Geometric Woven Jacquard Soft Silk",
+    "length": "6.3m (5.5m saree + 0.8m running blouse piece)",
+    "care": "Dry clean only to maintain rich jacquard weave and delicate metallic sheen. Medium steam iron on reverse.",
+    "defaultColor": "Charcoal Grey",
+    "sizes": [
+      "Free Size"
+    ],
+    "image": "/media/products/p15_tb-sar-7207-01_c419cdd5e3d2.jpg",
+    "images": [
+      "/media/products/p15_tb-sar-7207-01_c419cdd5e3d2.jpg",
+      "/media/products/p15_tb-sar-7207-02_b85d23af212f.jpg",
+      "/media/products/p15_tb-sar-7207-03_27e999913083.jpg",
+      "/media/products/p15_tb-sar-7207-04_cf7653702fb5.jpg",
+      "/media/products/p15_tb-sar-7207-05_d7bbae82f896.jpg",
+      "/media/products/p15_tb-sar-7207-06_5c3a5e8f3ad4.jpg"
+    ],
+    "inStock": true,
+    "isSoldOut": false,
+    "totalStock": 5,
+    "variants": [
       {
-        colorName: "Maroon Floral",
-        colorCode: "#781D42",
-        image: "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format&fit=crop&w=800&q=80",
-        inStock: true
+        "id": 159,
+        "code": "TB-SAR-7207-01",
+        "productCode": "TB-SAR-7207-01",
+        "product_code": "TB-SAR-7207-01",
+        "colorName": "Charcoal Grey",
+        "colorCode": "#334155",
+        "image": "/media/products/p15_tb-sar-7207-01_c419cdd5e3d2.jpg",
+        "images": [
+          "/media/products/p15_tb-sar-7207-01_c419cdd5e3d2.jpg"
+        ],
+        "stockQty": 0,
+        "stock_qty": 0,
+        "inStock": false,
+        "in_stock": false
       },
       {
-        colorName: "Navy Paisley",
-        colorCode: "#1D267D",
-        image: "https://images.unsplash.com/photo-1614088445100-a681329a6744?auto=format&fit=crop&w=800&q=80",
-        inStock: true
+        "id": 160,
+        "code": "TB-SAR-7207-02",
+        "productCode": "TB-SAR-7207-02",
+        "product_code": "TB-SAR-7207-02",
+        "colorName": "Charcoal Grey",
+        "colorCode": "#334155",
+        "image": "/media/products/p15_tb-sar-7207-02_b85d23af212f.jpg",
+        "images": [
+          "/media/products/p15_tb-sar-7207-02_b85d23af212f.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
       },
       {
-        colorName: "Teal Botanical",
-        colorCode: "#005F73",
-        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
-        inStock: true
+        "id": 161,
+        "code": "TB-SAR-7207-03",
+        "productCode": "TB-SAR-7207-03",
+        "product_code": "TB-SAR-7207-03",
+        "colorName": "Mehendi Green",
+        "colorCode": "#588157",
+        "image": "/media/products/p15_tb-sar-7207-03_27e999913083.jpg",
+        "images": [
+          "/media/products/p15_tb-sar-7207-03_27e999913083.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 162,
+        "code": "TB-SAR-7207-04",
+        "productCode": "TB-SAR-7207-04",
+        "product_code": "TB-SAR-7207-04",
+        "colorName": "Mehendi Green",
+        "colorCode": "#588157",
+        "image": "/media/products/p15_tb-sar-7207-04_cf7653702fb5.jpg",
+        "images": [
+          "/media/products/p15_tb-sar-7207-04_cf7653702fb5.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 163,
+        "code": "TB-SAR-7207-05",
+        "productCode": "TB-SAR-7207-05",
+        "product_code": "TB-SAR-7207-05",
+        "colorName": "Peacock Blue",
+        "colorCode": "#005F73",
+        "image": "/media/products/p15_tb-sar-7207-05_d7bbae82f896.jpg",
+        "images": [
+          "/media/products/p15_tb-sar-7207-05_d7bbae82f896.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 164,
+        "code": "TB-SAR-7207-06",
+        "productCode": "TB-SAR-7207-06",
+        "product_code": "TB-SAR-7207-06",
+        "colorName": "Bridal Maroon",
+        "colorCode": "#7F1D1D",
+        "image": "/media/products/p15_tb-sar-7207-06_5c3a5e8f3ad4.jpg",
+        "images": [
+          "/media/products/p15_tb-sar-7207-06_5c3a5e8f3ad4.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      }
+    ]
+  },
+  {
+    "id": "tb-sar-7686",
+    "dbId": 13,
+    "code": "TB-SAR-7686",
+    "productCode": "TB-SAR-7686",
+    "name": "Handcrafted Kalamkari Soft Silk Saree",
+    "category": "sarees",
+    "categoryName": "Sarees",
+    "basePrice": 960,
+    "price": 960,
+    "originalPrice": 1330,
+    "discount": "28% OFF",
+    "tag": "Bestseller",
+    "description": "Exquisite handcrafted saree featuring breathable drape, traditional artisanal motifs, and coordinated running blouse piece. Ideal for festive celebrations, weddings, and elegant daily wear.",
+    "fabric": "Kalamkari Soft Silk",
+    "length": "6.3m (5.5m saree + 0.8m running blouse piece)",
+    "care": "First wash dry clean recommended. Gentle cold water hand wash separately. Dry in shade. Medium steam iron.",
+    "defaultColor": "Jet Black",
+    "sizes": [
+      "Free Size"
+    ],
+    "image": "/media/products/p13_tb-sar-7686-01_74e4c56b03c5.jpg",
+    "images": [
+      "/media/products/p13_tb-sar-7686-01_74e4c56b03c5.jpg",
+      "/media/products/p13_tb-sar-7686-02_6439ff29a5f7.jpg",
+      "/media/products/p13_tb-sar-7686-03_96a266ac2df8.jpg",
+      "/media/products/p13_tb-sar-7686-04_b111a42abd43.jpg",
+      "/media/products/p13_tb-sar-7686-05_001d971a2230.jpg",
+      "/media/products/p13_tb-sar-7686-06_485084fdfa6b.jpg",
+      "/media/products/p13_tb-sar-7686-07_6d00e63f5f9c.jpg",
+      "/media/products/p13_tb-sar-7686-08_89179f43fe88.jpg",
+      "/media/products/p13_tb-sar-7686-09_f7e1d4486db2.jpg",
+      "/media/products/p13_tb-sar-7686-10_d4b5abd300d3.jpg",
+      "/media/products/p13_tb-sar-7686-11_a09795b390dc.jpg",
+      "/media/products/p13_tb-sar-7686-12_df882a303326.jpg",
+      "/media/products/p13_tb-sar-7686-13_9c1be15ae0c6.jpg",
+      "/media/products/p13_tb-sar-7686-14_491c44d5e51e.jpg",
+      "/media/products/p13_tb-sar-7686-15_daa4ae549dbc.jpg",
+      "/media/products/p13_tb-sar-7686-16_99cf6162ce14.jpg",
+      "/media/products/p13_tb-sar-7686-17_4365000ec9b2.jpg",
+      "/media/products/p13_tb-sar-7686-18_e94e1aa0fd08.jpg",
+      "/media/products/p13_tb-sar-7686-19_d362983abb7b.jpg",
+      "/media/products/p13_tb-sar-7686-20_b6ff1353d84f.jpg",
+      "/media/products/p13_tb-sar-7686-21_36d1d229fe5f.jpg",
+      "/media/products/p13_tb-sar-7686-22_bf44eded4726.jpg",
+      "/media/products/p13_tb-sar-7686-23_4a6cde304a45.jpg",
+      "/media/products/p13_tb-sar-7686-24_95626e34f5ca.jpg",
+      "/media/products/p13_tb-sar-7686-25_1066eeb62dd4.jpg",
+      "/media/products/p13_tb-sar-7686-26_5ad5cb335620.jpg",
+      "/media/products/p13_tb-sar-7686-27_868b9b3ab739.jpg",
+      "/media/products/p13_tb-sar-7686-28_2262a16dcf9f.jpg",
+      "/media/products/p13_tb-sar-7686-29_d19b020da207.jpg",
+      "/media/products/p13_tb-sar-7686-30_9b66c801a39c.jpg",
+      "/media/products/p13_tb-sar-7686-31_369fd6697855.jpg"
+    ],
+    "inStock": true,
+    "isSoldOut": false,
+    "totalStock": 40,
+    "variants": [
+      {
+        "id": 108,
+        "code": "TB-SAR-7686-01",
+        "productCode": "TB-SAR-7686-01",
+        "product_code": "TB-SAR-7686-01",
+        "colorName": "Jet Black",
+        "colorCode": "#1A1A1A",
+        "image": "/media/products/p13_tb-sar-7686-01_74e4c56b03c5.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-01_74e4c56b03c5.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 109,
+        "code": "TB-SAR-7686-02",
+        "productCode": "TB-SAR-7686-02",
+        "product_code": "TB-SAR-7686-02",
+        "colorName": "Jet Black",
+        "colorCode": "#1A1A1A",
+        "image": "/media/products/p13_tb-sar-7686-02_6439ff29a5f7.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-02_6439ff29a5f7.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 110,
+        "code": "TB-SAR-7686-03",
+        "productCode": "TB-SAR-7686-03",
+        "product_code": "TB-SAR-7686-03",
+        "colorName": "Bridal Maroon",
+        "colorCode": "#7F1D1D",
+        "image": "/media/products/p13_tb-sar-7686-03_96a266ac2df8.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-03_96a266ac2df8.jpg"
+        ],
+        "stockQty": 10,
+        "stock_qty": 10,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 111,
+        "code": "TB-SAR-7686-04",
+        "productCode": "TB-SAR-7686-04",
+        "product_code": "TB-SAR-7686-04",
+        "colorName": "Silver Grey",
+        "colorCode": "#9CA3AF",
+        "image": "/media/products/p13_tb-sar-7686-04_b111a42abd43.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-04_b111a42abd43.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 112,
+        "code": "TB-SAR-7686-05",
+        "productCode": "TB-SAR-7686-05",
+        "product_code": "TB-SAR-7686-05",
+        "colorName": "Jet Black",
+        "colorCode": "#1A1A1A",
+        "image": "/media/products/p13_tb-sar-7686-05_001d971a2230.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-05_001d971a2230.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 113,
+        "code": "TB-SAR-7686-06",
+        "productCode": "TB-SAR-7686-06",
+        "product_code": "TB-SAR-7686-06",
+        "colorName": "Silver Grey",
+        "colorCode": "#9CA3AF",
+        "image": "/media/products/p13_tb-sar-7686-06_485084fdfa6b.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-06_485084fdfa6b.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 114,
+        "code": "TB-SAR-7686-07",
+        "productCode": "TB-SAR-7686-07",
+        "product_code": "TB-SAR-7686-07",
+        "colorName": "Silver Grey",
+        "colorCode": "#9CA3AF",
+        "image": "/media/products/p13_tb-sar-7686-07_6d00e63f5f9c.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-07_6d00e63f5f9c.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 115,
+        "code": "TB-SAR-7686-08",
+        "productCode": "TB-SAR-7686-08",
+        "product_code": "TB-SAR-7686-08",
+        "colorName": "Jet Black",
+        "colorCode": "#1A1A1A",
+        "image": "/media/products/p13_tb-sar-7686-08_89179f43fe88.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-08_89179f43fe88.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 116,
+        "code": "TB-SAR-7686-09",
+        "productCode": "TB-SAR-7686-09",
+        "product_code": "TB-SAR-7686-09",
+        "colorName": "Silver Grey",
+        "colorCode": "#9CA3AF",
+        "image": "/media/products/p13_tb-sar-7686-09_f7e1d4486db2.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-09_f7e1d4486db2.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 117,
+        "code": "TB-SAR-7686-10",
+        "productCode": "TB-SAR-7686-10",
+        "product_code": "TB-SAR-7686-10",
+        "colorName": "Charcoal Grey",
+        "colorCode": "#334155",
+        "image": "/media/products/p13_tb-sar-7686-10_d4b5abd300d3.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-10_d4b5abd300d3.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 118,
+        "code": "TB-SAR-7686-11",
+        "productCode": "TB-SAR-7686-11",
+        "product_code": "TB-SAR-7686-11",
+        "colorName": "Silver Grey",
+        "colorCode": "#9CA3AF",
+        "image": "/media/products/p13_tb-sar-7686-11_a09795b390dc.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-11_a09795b390dc.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 119,
+        "code": "TB-SAR-7686-12",
+        "productCode": "TB-SAR-7686-12",
+        "product_code": "TB-SAR-7686-12",
+        "colorName": "Silver Grey",
+        "colorCode": "#9CA3AF",
+        "image": "/media/products/p13_tb-sar-7686-12_df882a303326.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-12_df882a303326.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 120,
+        "code": "TB-SAR-7686-13",
+        "productCode": "TB-SAR-7686-13",
+        "product_code": "TB-SAR-7686-13",
+        "colorName": "Charcoal Grey",
+        "colorCode": "#334155",
+        "image": "/media/products/p13_tb-sar-7686-13_9c1be15ae0c6.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-13_9c1be15ae0c6.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 121,
+        "code": "TB-SAR-7686-14",
+        "productCode": "TB-SAR-7686-14",
+        "product_code": "TB-SAR-7686-14",
+        "colorName": "Rust Orange",
+        "colorCode": "#C2410C",
+        "image": "/media/products/p13_tb-sar-7686-14_491c44d5e51e.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-14_491c44d5e51e.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 122,
+        "code": "TB-SAR-7686-15",
+        "productCode": "TB-SAR-7686-15",
+        "product_code": "TB-SAR-7686-15",
+        "colorName": "Rust Orange",
+        "colorCode": "#C2410C",
+        "image": "/media/products/p13_tb-sar-7686-15_daa4ae549dbc.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-15_daa4ae549dbc.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 123,
+        "code": "TB-SAR-7686-16",
+        "productCode": "TB-SAR-7686-16",
+        "product_code": "TB-SAR-7686-16",
+        "colorName": "Bridal Maroon",
+        "colorCode": "#7F1D1D",
+        "image": "/media/products/p13_tb-sar-7686-16_99cf6162ce14.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-16_99cf6162ce14.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 124,
+        "code": "TB-SAR-7686-17",
+        "productCode": "TB-SAR-7686-17",
+        "product_code": "TB-SAR-7686-17",
+        "colorName": "Charcoal Grey",
+        "colorCode": "#334155",
+        "image": "/media/products/p13_tb-sar-7686-17_4365000ec9b2.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-17_4365000ec9b2.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 125,
+        "code": "TB-SAR-7686-18",
+        "productCode": "TB-SAR-7686-18",
+        "product_code": "TB-SAR-7686-18",
+        "colorName": "Bridal Maroon",
+        "colorCode": "#7F1D1D",
+        "image": "/media/products/p13_tb-sar-7686-18_e94e1aa0fd08.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-18_e94e1aa0fd08.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 126,
+        "code": "TB-SAR-7686-19",
+        "productCode": "TB-SAR-7686-19",
+        "product_code": "TB-SAR-7686-19",
+        "colorName": "Jet Black",
+        "colorCode": "#1A1A1A",
+        "image": "/media/products/p13_tb-sar-7686-19_d362983abb7b.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-19_d362983abb7b.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 127,
+        "code": "TB-SAR-7686-20",
+        "productCode": "TB-SAR-7686-20",
+        "product_code": "TB-SAR-7686-20",
+        "colorName": "Jet Black",
+        "colorCode": "#1A1A1A",
+        "image": "/media/products/p13_tb-sar-7686-20_b6ff1353d84f.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-20_b6ff1353d84f.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 128,
+        "code": "TB-SAR-7686-21",
+        "productCode": "TB-SAR-7686-21",
+        "product_code": "TB-SAR-7686-21",
+        "colorName": "Bridal Maroon",
+        "colorCode": "#7F1D1D",
+        "image": "/media/products/p13_tb-sar-7686-21_36d1d229fe5f.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-21_36d1d229fe5f.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 129,
+        "code": "TB-SAR-7686-22",
+        "productCode": "TB-SAR-7686-22",
+        "product_code": "TB-SAR-7686-22",
+        "colorName": "Bridal Maroon",
+        "colorCode": "#7F1D1D",
+        "image": "/media/products/p13_tb-sar-7686-22_bf44eded4726.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-22_bf44eded4726.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 130,
+        "code": "TB-SAR-7686-23",
+        "productCode": "TB-SAR-7686-23",
+        "product_code": "TB-SAR-7686-23",
+        "colorName": "Jet Black",
+        "colorCode": "#1A1A1A",
+        "image": "/media/products/p13_tb-sar-7686-23_4a6cde304a45.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-23_4a6cde304a45.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 131,
+        "code": "TB-SAR-7686-24",
+        "productCode": "TB-SAR-7686-24",
+        "product_code": "TB-SAR-7686-24",
+        "colorName": "Jet Black",
+        "colorCode": "#1A1A1A",
+        "image": "/media/products/p13_tb-sar-7686-24_95626e34f5ca.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-24_95626e34f5ca.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 132,
+        "code": "TB-SAR-7686-25",
+        "productCode": "TB-SAR-7686-25",
+        "product_code": "TB-SAR-7686-25",
+        "colorName": "Silver Grey",
+        "colorCode": "#9CA3AF",
+        "image": "/media/products/p13_tb-sar-7686-25_1066eeb62dd4.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-25_1066eeb62dd4.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 133,
+        "code": "TB-SAR-7686-26",
+        "productCode": "TB-SAR-7686-26",
+        "product_code": "TB-SAR-7686-26",
+        "colorName": "Bridal Maroon",
+        "colorCode": "#7F1D1D",
+        "image": "/media/products/p13_tb-sar-7686-26_5ad5cb335620.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-26_5ad5cb335620.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 134,
+        "code": "TB-SAR-7686-27",
+        "productCode": "TB-SAR-7686-27",
+        "product_code": "TB-SAR-7686-27",
+        "colorName": "Charcoal Grey",
+        "colorCode": "#334155",
+        "image": "/media/products/p13_tb-sar-7686-27_868b9b3ab739.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-27_868b9b3ab739.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 135,
+        "code": "TB-SAR-7686-28",
+        "productCode": "TB-SAR-7686-28",
+        "product_code": "TB-SAR-7686-28",
+        "colorName": "Silver Grey",
+        "colorCode": "#9CA3AF",
+        "image": "/media/products/p13_tb-sar-7686-28_2262a16dcf9f.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-28_2262a16dcf9f.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 136,
+        "code": "TB-SAR-7686-29",
+        "productCode": "TB-SAR-7686-29",
+        "product_code": "TB-SAR-7686-29",
+        "colorName": "Rust Orange",
+        "colorCode": "#C2410C",
+        "image": "/media/products/p13_tb-sar-7686-29_d19b020da207.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-29_d19b020da207.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 137,
+        "code": "TB-SAR-7686-30",
+        "productCode": "TB-SAR-7686-30",
+        "product_code": "TB-SAR-7686-30",
+        "colorName": "Jet Black",
+        "colorCode": "#1A1A1A",
+        "image": "/media/products/p13_tb-sar-7686-30_9b66c801a39c.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-30_9b66c801a39c.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 138,
+        "code": "TB-SAR-7686-31",
+        "productCode": "TB-SAR-7686-31",
+        "product_code": "TB-SAR-7686-31",
+        "colorName": "Charcoal Grey",
+        "colorCode": "#334155",
+        "image": "/media/products/p13_tb-sar-7686-31_369fd6697855.jpg",
+        "images": [
+          "/media/products/p13_tb-sar-7686-31_369fd6697855.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      }
+    ]
+  },
+  {
+    "id": "tb-sar-9410",
+    "dbId": 12,
+    "code": "TB-SAR-9410",
+    "productCode": "TB-SAR-9410",
+    "name": "Pure cotton Batik",
+    "category": "sarees",
+    "categoryName": "Sarees",
+    "basePrice": 790,
+    "price": 790,
+    "originalPrice": 1100,
+    "discount": "28% OFF",
+    "tag": "",
+    "description": "This is a traditional Indigo Batik hand-wax resist printed saree. It features distinctive abstract floral wheels and traditional paisley (kalka) motifs. The characteristic cracked texture throughout the pattern is an organic result of the handcrafted batik wax-dyeing process.",
+    "fabric": "Pure Mulmul Cotton",
+    "length": "6.5m(1m attached running blouse)",
+    "care": "* First Wash: Hand wash separately in cold water. For precaution, soak it briefly in saltwater to fix the natural indigo dye. * Detergent: Use a mild or liquid detergent. Do not use bleach. * Drying: Air dry in soft sunlight or under a shade. * Ironing: Iron on a medium setting before wearing.",
+    "defaultColor": "Emerald Green",
+    "sizes": [
+      "Free Size"
+    ],
+    "image": "/media/products/p12_tb-sar-9410-01_028fc1c2b183.jpg",
+    "images": [
+      "/media/products/p12_tb-sar-9410-01_028fc1c2b183.jpg",
+      "/media/products/p12_tb-sar-9410-02_2e1f7c809268.jpg",
+      "/media/products/p12_tb-sar-9410-03_16a7aafb6302.jpg",
+      "/media/products/p12_tb-sar-9410-04_96610bd4312b.jpg",
+      "/media/products/p12_tb-sar-9410-05_917f7e4dbdb5.jpg",
+      "/media/products/p12_tb-sar-9410-06_8cd88e8d52a4.jpg",
+      "/media/products/p12_tb-sar-9410-07_e899ce2c6b94.jpg",
+      "/media/products/p12_tb-sar-9410-08_e7f612be3fcb.jpg",
+      "/media/products/p12_tb-sar-9410-09_60b19e34d3e6.jpg",
+      "/media/products/p12_tb-sar-9410-10_a14907483d49.jpg",
+      "/media/products/p12_tb-sar-9410-11_bf360160b303.jpg",
+      "/media/products/p12_tb-sar-9410-12_f6a9ada9c213.jpg",
+      "/media/products/p12_tb-sar-9410-13_207fbac783e7.jpg"
+    ],
+    "inStock": true,
+    "isSoldOut": false,
+    "totalStock": 11,
+    "variants": [
+      {
+        "id": 38,
+        "code": "TB-SAR-9410-01",
+        "productCode": "TB-SAR-9410-01",
+        "product_code": "TB-SAR-9410-01",
+        "colorName": "Emerald Green",
+        "colorCode": "#6BBF18",
+        "image": "/media/products/p12_tb-sar-9410-01_028fc1c2b183.jpg",
+        "images": [
+          "/media/products/p12_tb-sar-9410-01_028fc1c2b183.jpg"
+        ],
+        "stockQty": 0,
+        "stock_qty": 0,
+        "inStock": false,
+        "in_stock": false
+      },
+      {
+        "id": 39,
+        "code": "TB-SAR-9410-02",
+        "productCode": "TB-SAR-9410-02",
+        "product_code": "TB-SAR-9410-02",
+        "colorName": "Magenta",
+        "colorCode": "#A72468",
+        "image": "/media/products/p12_tb-sar-9410-02_2e1f7c809268.jpg",
+        "images": [
+          "/media/products/p12_tb-sar-9410-02_2e1f7c809268.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 40,
+        "code": "TB-SAR-9410-03",
+        "productCode": "TB-SAR-9410-03",
+        "product_code": "TB-SAR-9410-03",
+        "colorName": "Charcoal Grey",
+        "colorCode": "#404852",
+        "image": "/media/products/p12_tb-sar-9410-03_16a7aafb6302.jpg",
+        "images": [
+          "/media/products/p12_tb-sar-9410-03_16a7aafb6302.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 41,
+        "code": "TB-SAR-9410-04",
+        "productCode": "TB-SAR-9410-04",
+        "product_code": "TB-SAR-9410-04",
+        "colorName": "Royal Blue",
+        "colorCode": "#1E56B3",
+        "image": "/media/products/p12_tb-sar-9410-04_96610bd4312b.jpg",
+        "images": [
+          "/media/products/p12_tb-sar-9410-04_96610bd4312b.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 42,
+        "code": "TB-SAR-9410-05",
+        "productCode": "TB-SAR-9410-05",
+        "product_code": "TB-SAR-9410-05",
+        "colorName": "Mustard Yellow",
+        "colorCode": "#E59518",
+        "image": "/media/products/p12_tb-sar-9410-05_917f7e4dbdb5.jpg",
+        "images": [
+          "/media/products/p12_tb-sar-9410-05_917f7e4dbdb5.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 43,
+        "code": "TB-SAR-9410-06",
+        "productCode": "TB-SAR-9410-06",
+        "product_code": "TB-SAR-9410-06",
+        "colorName": "Jet Black",
+        "colorCode": "#1F2228",
+        "image": "/media/products/p12_tb-sar-9410-06_8cd88e8d52a4.jpg",
+        "images": [
+          "/media/products/p12_tb-sar-9410-06_8cd88e8d52a4.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 44,
+        "code": "TB-SAR-9410-07",
+        "productCode": "TB-SAR-9410-07",
+        "product_code": "TB-SAR-9410-07",
+        "colorName": "Brick Red",
+        "colorCode": "#9B333C",
+        "image": "/media/products/p12_tb-sar-9410-07_e899ce2c6b94.jpg",
+        "images": [
+          "/media/products/p12_tb-sar-9410-07_e899ce2c6b94.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 45,
+        "code": "TB-SAR-9410-08",
+        "productCode": "TB-SAR-9410-08",
+        "product_code": "TB-SAR-9410-08",
+        "colorName": "Rani Pink",
+        "colorCode": "#B61C68",
+        "image": "/media/products/p12_tb-sar-9410-08_e7f612be3fcb.jpg",
+        "images": [
+          "/media/products/p12_tb-sar-9410-08_e7f612be3fcb.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 46,
+        "code": "TB-SAR-9410-09",
+        "productCode": "TB-SAR-9410-09",
+        "product_code": "TB-SAR-9410-09",
+        "colorName": "Slate Black",
+        "colorCode": "#262B33",
+        "image": "/media/products/p12_tb-sar-9410-09_60b19e34d3e6.jpg",
+        "images": [
+          "/media/products/p12_tb-sar-9410-09_60b19e34d3e6.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 47,
+        "code": "TB-SAR-9410-10",
+        "productCode": "TB-SAR-9410-10",
+        "product_code": "TB-SAR-9410-10",
+        "colorName": "Indigo Navy Blue",
+        "colorCode": "#272B4B",
+        "image": "/media/products/p12_tb-sar-9410-10_a14907483d49.jpg",
+        "images": [
+          "/media/products/p12_tb-sar-9410-10_a14907483d49.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 48,
+        "code": "TB-SAR-9410-11",
+        "productCode": "TB-SAR-9410-11",
+        "product_code": "TB-SAR-9410-11",
+        "colorName": "Apple Green",
+        "colorCode": "#7CB82A",
+        "image": "/media/products/p12_tb-sar-9410-11_bf360160b303.jpg",
+        "images": [
+          "/media/products/p12_tb-sar-9410-11_bf360160b303.jpg"
+        ],
+        "stockQty": 0,
+        "stock_qty": 0,
+        "inStock": false,
+        "in_stock": false
+      },
+      {
+        "id": 49,
+        "code": "TB-SAR-9410-12",
+        "productCode": "TB-SAR-9410-12",
+        "product_code": "TB-SAR-9410-12",
+        "colorName": "Sky Blue",
+        "colorCode": "#1B9AD6",
+        "image": "/media/products/p12_tb-sar-9410-12_f6a9ada9c213.jpg",
+        "images": [
+          "/media/products/p12_tb-sar-9410-12_f6a9ada9c213.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 50,
+        "code": "TB-SAR-9410-13",
+        "productCode": "TB-SAR-9410-13",
+        "product_code": "TB-SAR-9410-13",
+        "colorName": "Rust Orange",
+        "colorCode": "#D65D13",
+        "image": "/media/products/p12_tb-sar-9410-13_207fbac783e7.jpg",
+        "images": [
+          "/media/products/p12_tb-sar-9410-13_207fbac783e7.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      }
+    ]
+  },
+  {
+    "id": "tb-sar-8303",
+    "dbId": 11,
+    "code": "TB-SAR-8303",
+    "productCode": "TB-SAR-8303",
+    "name": "Chiniya Soft Silk Saree",
+    "category": "sarees",
+    "categoryName": "Sarees",
+    "basePrice": 1099,
+    "price": 1099,
+    "originalPrice": 1520,
+    "discount": "28% OFF",
+    "tag": "",
+    "description": "Celebrate timeless Indian heritage with this exquisite Soft Silk Saree. Woven with an elegant display of intricate silver zari floral motifs across the body, it features geometric textured pattern lines that catch the light beautifully.",
+    "fabric": "Soft Silks",
+    "length": "5.5m(with blouse)",
+    "care": "Dry clean only or gentle hand wash in cold water with mild detergent; dry in shade and iron on a medium heat setting.",
+    "defaultColor": "Teal-green",
+    "sizes": [
+      "Free Size"
+    ],
+    "image": "/media/products/p11_tb-sar-8303-01_cd55847d99f3.jpg",
+    "images": [
+      "/media/products/p11_tb-sar-8303-01_cd55847d99f3.jpg",
+      "/media/products/p11_tb-sar-8303-02_97967b31e6fa.jpg",
+      "/media/products/p11_tb-sar-8303-03_2dca3dd111c7.jpg",
+      "/media/products/p11_tb-sar-8303-04_abfe099810b1.jpg",
+      "/media/products/p11_tb-sar-8303-05_ca367af882ab.jpg",
+      "/media/products/p11_tb-sar-8303-06_fca8c384a112.jpg",
+      "/media/products/p11_tb-sar-8303-07_5e78f65d072f.jpg",
+      "/media/products/p11_tb-sar-8303-08_3c730a1fca82.jpg"
+    ],
+    "inStock": true,
+    "isSoldOut": false,
+    "totalStock": 8,
+    "variants": [
+      {
+        "id": 165,
+        "code": "TB-SAR-8303-01",
+        "productCode": "TB-SAR-8303-01",
+        "product_code": "TB-SAR-8303-01",
+        "colorName": "Teal-green",
+        "colorCode": "#008080",
+        "image": "/media/products/p11_tb-sar-8303-01_cd55847d99f3.jpg",
+        "images": [
+          "/media/products/p11_tb-sar-8303-01_cd55847d99f3.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 166,
+        "code": "TB-SAR-8303-02",
+        "productCode": "TB-SAR-8303-02",
+        "product_code": "TB-SAR-8303-02",
+        "colorName": "Royal violet",
+        "colorCode": "#7851A9",
+        "image": "/media/products/p11_tb-sar-8303-02_97967b31e6fa.jpg",
+        "images": [
+          "/media/products/p11_tb-sar-8303-02_97967b31e6fa.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 167,
+        "code": "TB-SAR-8303-03",
+        "productCode": "TB-SAR-8303-03",
+        "product_code": "TB-SAR-8303-03",
+        "colorName": "Yellowish-green",
+        "colorCode": "#B5C827",
+        "image": "/media/products/p11_tb-sar-8303-03_2dca3dd111c7.jpg",
+        "images": [
+          "/media/products/p11_tb-sar-8303-03_2dca3dd111c7.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 168,
+        "code": "TB-SAR-8303-04",
+        "productCode": "TB-SAR-8303-04",
+        "product_code": "TB-SAR-8303-04",
+        "colorName": "Vibrant Hot Pink",
+        "colorCode": "#D11C5B",
+        "image": "/media/products/p11_tb-sar-8303-04_abfe099810b1.jpg",
+        "images": [
+          "/media/products/p11_tb-sar-8303-04_abfe099810b1.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 169,
+        "code": "TB-SAR-8303-05",
+        "productCode": "TB-SAR-8303-05",
+        "product_code": "TB-SAR-8303-05",
+        "colorName": "Deep Wine",
+        "colorCode": "#803152",
+        "image": "/media/products/p11_tb-sar-8303-05_ca367af882ab.jpg",
+        "images": [
+          "/media/products/p11_tb-sar-8303-05_ca367af882ab.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 170,
+        "code": "TB-SAR-8303-06",
+        "productCode": "TB-SAR-8303-06",
+        "product_code": "TB-SAR-8303-06",
+        "colorName": "Royal Blue",
+        "colorCode": "#0B5394",
+        "image": "/media/products/p11_tb-sar-8303-06_fca8c384a112.jpg",
+        "images": [
+          "/media/products/p11_tb-sar-8303-06_fca8c384a112.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 171,
+        "code": "TB-SAR-8303-07",
+        "productCode": "TB-SAR-8303-07",
+        "product_code": "TB-SAR-8303-07",
+        "colorName": "Orange",
+        "colorCode": "#FF6B1A",
+        "image": "/media/products/p11_tb-sar-8303-07_5e78f65d072f.jpg",
+        "images": [
+          "/media/products/p11_tb-sar-8303-07_5e78f65d072f.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 172,
+        "code": "TB-SAR-8303-08",
+        "productCode": "TB-SAR-8303-08",
+        "product_code": "TB-SAR-8303-08",
+        "colorName": "Teal Blue",
+        "colorCode": "#006F94",
+        "image": "/media/products/p11_tb-sar-8303-08_3c730a1fca82.jpg",
+        "images": [
+          "/media/products/p11_tb-sar-8303-08_3c730a1fca82.jpg"
+        ],
+        "stockQty": 1,
+        "stock_qty": 1,
+        "inStock": true,
+        "in_stock": true
+      }
+    ]
+  },
+  {
+    "id": "tb-kur-001",
+    "code": "TB-KUR-001",
+    "name": "Anarkali Embroidered Kurti with Dupatta Set",
+    "category": "kurtis",
+    "categoryName": "Kurtis",
+    "basePrice": 1299,
+    "originalPrice": 1999,
+    "discount": "35% OFF",
+    "tag": "Trending",
+    "description": "Flared floor-length Rayon Anarkali kurti paired with fine sequin-embroidered yoke, comfortable matching pant, and digital printed malmal dupatta. Breathable, sweat-resistant, and premium finish.",
+    "fabric": "Heavy Rayon 14kg with Chanderi Dupatta",
+    "sizes": [
+      "M (38)",
+      "L (40)",
+      "XL (42)",
+      "XXL (44)"
+    ],
+    "length": "48 Inches Kurti, 2.2m Dupatta",
+    "care": "Gentle machine wash",
+    "defaultColor": "Dusty Rose",
+    "image": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80"
+    ],
+    "inStock": true,
+    "isSoldOut": false,
+    "totalStock": 15,
+    "variants": [
+      {
+        "id": 901,
+        "code": "TB-KUR-001-01",
+        "productCode": "TB-KUR-001-01",
+        "product_code": "TB-KUR-001-01",
+        "colorName": "Dusty Rose",
+        "colorCode": "#D4A5A5",
+        "image": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
+        "images": [
+          "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80"
+        ],
+        "stockQty": 8,
+        "stock_qty": 8,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 902,
+        "code": "TB-KUR-001-02",
+        "productCode": "TB-KUR-001-02",
+        "product_code": "TB-KUR-001-02",
+        "colorName": "Teal Blue",
+        "colorCode": "#005F73",
+        "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+        "images": [
+          "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80"
+        ],
+        "stockQty": 7,
+        "stock_qty": 7,
+        "inStock": true,
+        "in_stock": true
+      }
+    ]
+  },
+  {
+    "id": "tb-bl-001",
+    "code": "TB-BL-001",
+    "name": "Heavy Bridal Aari Work Blouse Piece",
+    "category": "blouse-materials",
+    "categoryName": "Blouse Materials",
+    "basePrice": 850,
+    "originalPrice": 1400,
+    "discount": "39% OFF",
+    "tag": "Bridal Special",
+    "description": "Exquisite bridal unstitched blouse material crafted with pure raw silk and embellished with heavy handmade maggam and aari needlework. Rich golden zardozi, kundan stones, and cut beads.",
+    "fabric": "Pure Raw Silk with Maggam Work",
+    "length": "1.0 Meter Cut",
+    "care": "Dry clean strictly",
+    "defaultColor": "Bridal Crimson Red",
+    "image": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80"
+    ],
+    "inStock": true,
+    "isSoldOut": false,
+    "totalStock": 14,
+    "variants": [
+      {
+        "id": 911,
+        "code": "TB-BL-001-01",
+        "productCode": "TB-BL-001-01",
+        "product_code": "TB-BL-001-01",
+        "colorName": "Bridal Crimson Red",
+        "colorCode": "#990000",
+        "image": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
+        "images": [
+          "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80"
+        ],
+        "stockQty": 6,
+        "stock_qty": 6,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 912,
+        "code": "TB-BL-001-02",
+        "productCode": "TB-BL-001-02",
+        "product_code": "TB-BL-001-02",
+        "colorName": "Deep Royal Navy",
+        "colorCode": "#0A2540",
+        "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+        "images": [
+          "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80"
+        ],
+        "stockQty": 8,
+        "stock_qty": 8,
+        "inStock": true,
+        "in_stock": true
+      }
+    ]
+  },
+  {
+    "id": "tb-ins-001",
+    "code": "TB-INS-001",
+    "name": "Pure Cotton 6-Cut Saree Inskirt (Petticoat)",
+    "category": "inskirts",
+    "categoryName": "Inskirts",
+    "basePrice": 299,
+    "originalPrice": 499,
+    "discount": "40% OFF",
+    "tag": "Essential",
+    "description": "100% pure premium poplin cotton 6-cut saree inskirt (petticoat) with sturdy matching drawstring and interlock stitching. Available in a vast range of vibrant matching colors.",
+    "fabric": "100% Poplin Cotton",
+    "sizes": [
+      "Free Size (Waist 28-38\")",
+      "XL (Waist 38-44\")",
+      "XXL (Waist 44-50\")"
+    ],
+    "length": "38 Inches (Standard)",
+    "care": "Regular hand / machine wash",
+    "defaultColor": "Emerald Green",
+    "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80"
+    ],
+    "inStock": true,
+    "isSoldOut": false,
+    "totalStock": 20,
+    "variants": [
+      {
+        "id": 921,
+        "code": "TB-INS-001-01",
+        "productCode": "TB-INS-001-01",
+        "product_code": "TB-INS-001-01",
+        "colorName": "Emerald Green",
+        "colorCode": "#0D5C3A",
+        "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+        "images": [
+          "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80"
+        ],
+        "stockQty": 10,
+        "stock_qty": 10,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 922,
+        "code": "TB-INS-001-02",
+        "productCode": "TB-INS-001-02",
+        "product_code": "TB-INS-001-02",
+        "colorName": "Rani Pink",
+        "colorCode": "#C2185B",
+        "image": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
+        "images": [
+          "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80"
+        ],
+        "stockQty": 10,
+        "stock_qty": 10,
+        "inStock": true,
+        "in_stock": true
+      }
+    ]
+  },
+  {
+    "id": "tb-nit-001",
+    "code": "TB-NIT-001",
+    "name": "Pure Cotton Printed Feeding & Comfort Nighty",
+    "category": "night-wear",
+    "categoryName": "Night Wear",
+    "basePrice": 499,
+    "originalPrice": 750,
+    "discount": "33% OFF",
+    "tag": "Daily Essential",
+    "description": "Super soft, breathable pure cotton nighty with front zip for feeding convenience, side pockets, and shrinkage-proof fast colors. Guarantees supreme comfort.",
+    "fabric": "100% Pure Combed Cotton",
+    "sizes": [
+      "L (Bust 42\")",
+      "XL (Bust 44\")",
+      "XXL (Bust 46\")",
+      "Free Size"
+    ],
+    "care": "Regular machine wash",
+    "defaultColor": "Maroon Floral",
+    "image": "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format&fit=crop&w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format&fit=crop&w=800&q=80"
+    ],
+    "inStock": true,
+    "isSoldOut": false,
+    "totalStock": 15,
+    "variants": [
+      {
+        "id": 931,
+        "code": "TB-NIT-001-01",
+        "productCode": "TB-NIT-001-01",
+        "product_code": "TB-NIT-001-01",
+        "colorName": "Maroon Floral",
+        "colorCode": "#781D42",
+        "image": "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format&fit=crop&w=800&q=80",
+        "images": [
+          "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?auto=format&fit=crop&w=800&q=80"
+        ],
+        "stockQty": 8,
+        "stock_qty": 8,
+        "inStock": true,
+        "in_stock": true
+      },
+      {
+        "id": 932,
+        "code": "TB-NIT-001-02",
+        "productCode": "TB-NIT-001-02",
+        "product_code": "TB-NIT-001-02",
+        "colorName": "Navy Paisley",
+        "colorCode": "#1D267D",
+        "image": "https://images.unsplash.com/photo-1614088445100-a681329a6744?auto=format&fit=crop&w=800&q=80",
+        "images": [
+          "https://images.unsplash.com/photo-1614088445100-a681329a6744?auto=format&fit=crop&w=800&q=80"
+        ],
+        "stockQty": 7,
+        "stock_qty": 7,
+        "inStock": true,
+        "in_stock": true
       }
     ]
   }
