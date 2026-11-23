@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  X, CheckCircle2, AlertCircle, MapPin, Navigation, 
+  X, QrCode, Copy, Check, CheckCircle2, AlertCircle, MapPin, Navigation, 
   Loader2, Sparkles, Truck, Info, CreditCard, Smartphone, 
   Lock, ShieldCheck, MessageCircle, Tag, ExternalLink, ChevronRight
 } from 'lucide-react';
@@ -8,6 +8,7 @@ import { useStore } from '../context/StoreContext';
 import { api } from '../services/api';
 import confetti from 'canvas-confetti';
 import logoImg from '../assets/logo.jpg';
+import arunaQrImg from '../assets/images/aruna_upi_qr.jpg';
 import {
   SHOP_LOCATION,
   getBrowserLocation,
@@ -41,6 +42,10 @@ export const CheckoutModal = () => {
     setIsAuthModalOpen,
     language
   } = useStore();
+
+  // Payment Mode: 'upi_qr' (Default: Aruna S QR Scanner) | 'razorpay'
+  const [paymentMode, setPaymentMode] = useState('upi_qr');
+  const [copiedUpi, setCopiedUpi] = useState(false);
 
   const [checkoutCouponInput, setCheckoutCouponInput] = useState('');
   const [isDetectingLocation, setIsDetectingLocation] = useState(false);
@@ -188,11 +193,28 @@ export const CheckoutModal = () => {
     }
   };
 
-  // Razorpay Link
+  // UPI Details for Aruna S
+  const UPI_ID = storeInfo.upiId || 'arunasakthivel02@okaxis';
+  const UPI_PAYEE_NAME = storeInfo.upiPayeeName || 'Aruna S';
   const RAZORPAY_URL = storeInfo.razorpayUrl || 'https://razorpay.me/@thalirboutique';
 
-  // Process Order & Pay via Razorpay
-  const handlePayWithRazorpay = async (channel = 'site') => {
+  // Copy UPI ID to Clipboard
+  const handleCopyUpi = () => {
+    navigator.clipboard.writeText(UPI_ID);
+    setCopiedUpi(true);
+    showToast(language === 'ta' ? 'UPI ID நகலெடுக்கப்பட்டது: ' + UPI_ID : 'UPI ID Copied: ' + UPI_ID);
+    setTimeout(() => setCopiedUpi(false), 2500);
+  };
+
+  // Launch Universal UPI Intent on Mobile (GPay / PhonePe / Paytm / BHIM)
+  const handleOpenMobileUpiApp = () => {
+    const am = Number(grandTotal).toFixed(2);
+    const upiUri = `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(UPI_PAYEE_NAME)}&am=${am}&cu=INR&tn=Thalir%20Boutique`;
+    window.location.href = upiUri;
+  };
+
+  // Process Order & Confirm
+  const handleProcessOrder = async (channel = 'site') => {
     // 1. Validation
     if (!formData.fullName.trim() || !formData.mobile.trim() || !formData.address.trim()) {
       const msg = language === 'ta'
@@ -230,7 +252,11 @@ export const CheckoutModal = () => {
     const orderId = `TB-${Date.now().toString().slice(-6)}`;
     const liveKeyId = import.meta.env.VITE_RAZORPAY_KEY_ID || storeInfo.razorpayKeyId || 'rzp_live_U3ZuVy8lgIl7IW';
 
-    const executeOrderFinalization = async (paymentId = '') => {
+    const executeOrderFinalization = async (paymentRef = '') => {
+      const paymentMethodLabel = paymentMode === 'upi_qr' 
+        ? 'UPI QR Scanner (Aruna S)' 
+        : 'Razorpay Online';
+
       // Build Complete Confirmed Order Object
       const finalizedOrder = {
         orderId,
@@ -272,11 +298,10 @@ export const CheckoutModal = () => {
           distanceKm: shippingInfo?.distanceKm || null,
           grandTotal
         },
-        paymentMethod: 'Razorpay Online',
-        payment_method: 'Razorpay Online',
-        paymentProof: paymentId ? `Payment ID: ${paymentId}` : 'Auto-Confirmed via Razorpay',
-        razorpay_payment_id: paymentId,
-        razorpay_payment_link: RAZORPAY_URL,
+        paymentMethod: paymentMethodLabel,
+        payment_method: paymentMethodLabel,
+        paymentProof: paymentRef || (paymentMode === 'upi_qr' ? `UPI to ${UPI_ID}` : 'Razorpay Verified'),
+        razorpay_payment_id: paymentMode === 'razorpay' ? paymentRef : null,
         channel,
         status: 'Payment Confirmed', // Auto-confirm order with admin!
         is_stock_deducted: true     // Deduct stock properly!
@@ -303,7 +328,9 @@ export const CheckoutModal = () => {
       if (channel === 'whatsapp') {
         const taxInvoiceMsg = formatTaxInvoiceReceipt(finalizedOrder, {
           phone: storeInfo.phone || '+91 6382218590',
-          paymentStatus: 'Prepaid via Razorpay (Auto-Confirmed)'
+          paymentStatus: paymentMode === 'upi_qr' 
+            ? `UPI Paid to ${UPI_ID} (Auto-Confirmed)` 
+            : 'Prepaid via Razorpay (Auto-Confirmed)'
         });
         const waUrl = `https://wa.me/${storeInfo.whatsappNumber}?text=${encodeURIComponent(taxInvoiceMsg)}`;
         window.open(waUrl, '_blank');
@@ -319,64 +346,67 @@ export const CheckoutModal = () => {
 
     // If channel is WhatsApp, finalize directly
     if (channel === 'whatsapp') {
-      window.open(RAZORPAY_URL, '_blank');
-      await executeOrderFinalization('WhatsApp Order Link');
+      await executeOrderFinalization('WhatsApp Order');
       return;
     }
 
-    // Try Official Razorpay Live Checkout SDK first
-    if (typeof window !== 'undefined' && window.Razorpay) {
-      try {
-        const rzpOptions = {
-          key: liveKeyId,
-          amount: Math.round(grandTotal * 100), // in paise
-          currency: 'INR',
-          name: 'Thalir Boutique',
-          description: `Order #${orderId} - ${cart.length} Saree(s)`,
-          image: logoImg,
-          prefill: {
-            name: formData.fullName.trim(),
-            contact: cleanMobile.slice(-10),
-            email: formData.email ? formData.email.trim() : ''
-          },
-          notes: {
-            order_id: orderId,
-            address: formData.address.trim(),
-            city: formData.city.trim(),
-            pincode: cleanPin
-          },
-          theme: {
-            color: '#0b3b24'
-          },
-          modal: {
-            ondismiss: function() {
-              setIsProcessingPayment(false);
+    // IF RAZORPAY MODE IS SELECTED:
+    if (paymentMode === 'razorpay') {
+      if (typeof window !== 'undefined' && window.Razorpay) {
+        try {
+          const rzpOptions = {
+            key: liveKeyId,
+            amount: Math.round(grandTotal * 100), // in paise
+            currency: 'INR',
+            name: 'Thalir Boutique',
+            description: `Order #${orderId} - ${cart.length} Saree(s)`,
+            image: logoImg,
+            prefill: {
+              name: formData.fullName.trim(),
+              contact: cleanMobile.slice(-10),
+              email: formData.email ? formData.email.trim() : ''
+            },
+            notes: {
+              order_id: orderId,
+              address: formData.address.trim(),
+              city: formData.city.trim(),
+              pincode: cleanPin
+            },
+            theme: {
+              color: '#0b3b24'
+            },
+            modal: {
+              ondismiss: function() {
+                setIsProcessingPayment(false);
+              }
+            },
+            handler: async function (response) {
+              await executeOrderFinalization(response.razorpay_payment_id || 'RZP_PAID');
             }
-          },
-          handler: async function (response) {
-            console.log('Razorpay live payment success:', response);
-            await executeOrderFinalization(response.razorpay_payment_id || 'RZP_PAID');
-          }
-        };
+          };
 
-        const rzpInstance = new window.Razorpay(rzpOptions);
-        rzpInstance.on('payment.failed', function (resp) {
-          setIsProcessingPayment(false);
-          const errDesc = resp?.error?.description || 'Transaction unsuccessful';
-          setFormError(`Payment failed: ${errDesc}`);
-          if (showToast) showToast(`Payment failed: ${errDesc}`);
-        });
+          const rzpInstance = new window.Razorpay(rzpOptions);
+          rzpInstance.on('payment.failed', function (resp) {
+            setIsProcessingPayment(false);
+            const errDesc = resp?.error?.description || 'Transaction unsuccessful';
+            setFormError(`Payment failed: ${errDesc}`);
+            if (showToast) showToast(`Payment failed: ${errDesc}`);
+          });
 
-        rzpInstance.open();
-        return;
-      } catch (sdkErr) {
-        console.warn('Razorpay SDK modal error, using direct link:', sdkErr);
+          rzpInstance.open();
+          return;
+        } catch (sdkErr) {
+          console.warn('Razorpay SDK modal error, fallback to direct link:', sdkErr);
+        }
       }
+      window.open(RAZORPAY_URL, '_blank');
+      await executeOrderFinalization('Direct Razorpay Link');
+      return;
     }
 
-    // Fallback: Open official razorpay.me link directly
-    window.open(RAZORPAY_URL, '_blank');
-    await executeOrderFinalization('Direct Razorpay Link');
+    // IF UPI QR SCANNER (ARUNA S) MODE IS SELECTED:
+    // 1-tap confirm order & deduct stock
+    await executeOrderFinalization(`UPI Scanned: ${UPI_ID}`);
   };
 
   if (!isCheckoutOpen) return null;
@@ -395,11 +425,11 @@ export const CheckoutModal = () => {
             />
             <div>
               <h2 className="font-serif text-lg sm:text-xl font-bold tracking-tight text-white flex items-center gap-2">
-                <span>{language === 'ta' ? 'தளிர்ப் பொட்டிக் செக்அவுட்' : 'Boutique Checkout & Payment'}</span>
+                <span>{language === 'ta' ? 'தளிர்ப் பொட்டிக் செக்அவுட்' : 'Boutique Checkout & UPI Payment'}</span>
               </h2>
               <p className="text-[11px] text-emerald-200 font-medium flex items-center gap-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-amber-300" />
-                <span>{language === 'ta' ? '100% பாதுகாப்பான & சரிபார்க்கப்பட்ட கட்டணம்' : '100% Safe & Verified Order'}</span>
+                <span>{language === 'ta' ? '100% பாதுகாப்பான & சரிபார்க்கப்பட்ட ஆர்டர்' : '100% Safe & Verified Order'}</span>
               </p>
             </div>
           </div>
@@ -649,52 +679,168 @@ export const CheckoutModal = () => {
             )}
           </div>
 
-          {/* 4. Exclusive Razorpay Payment Method Card */}
-          <div className="space-y-2">
+          {/* 4. Payment Method Tabs: UPI QR Scanner (Default) & Razorpay */}
+          <div className="space-y-3">
             <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider">
               {language === 'ta' ? 'கட்டண முறை' : 'Payment Method'}
             </label>
 
-            {/* Official Razorpay Card */}
-            <div className="bg-linear-to-br from-[#0c2340] to-[#07192d] text-white p-4 sm:p-5 rounded-2xl border-2 border-sky-500/40 shadow-lg relative overflow-hidden">
-              <div className="flex items-start justify-between relative z-10">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
-                    <span className="text-[11px] font-extrabold uppercase tracking-widest text-sky-300">
-                      Razorpay Trusted Partner
-                    </span>
-                  </div>
-                  <h4 className="text-base sm:text-lg font-bold text-white flex items-center gap-1.5">
-                    <span>Razorpay Secure Payment</span>
-                    <Lock className="w-4 h-4 text-amber-400" />
-                  </h4>
-                  <p className="text-xs text-sky-100/80 leading-relaxed max-w-md">
-                    Instant 1-tap checkout supporting <strong>Google Pay, PhonePe, Paytm, BHIM, super.money, Navi</strong>, Debit & Credit Cards, and NetBanking.
-                  </p>
-                </div>
-
-                <div className="bg-white/10 px-3 py-1.5 rounded-xl border border-white/20 text-right shrink-0">
-                  <div className="text-[10px] text-sky-200">Official Link</div>
-                  <div className="font-mono text-xs font-bold text-amber-300">@thalirboutique</div>
-                </div>
-              </div>
-
-              {/* Supported Payment Logos strip */}
-              <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-[11px] text-sky-200">
-                <div className="flex items-center gap-2 font-semibold">
-                  <span className="bg-white/10 px-2 py-0.5 rounded text-white font-mono text-[10px]">UPI</span>
-                  <span className="bg-white/10 px-2 py-0.5 rounded text-white font-mono text-[10px]">GPay</span>
-                  <span className="bg-white/10 px-2 py-0.5 rounded text-white font-mono text-[10px]">PhonePe</span>
-                  <span className="bg-white/10 px-2 py-0.5 rounded text-white font-mono text-[10px]">Paytm</span>
-                  <span className="bg-white/10 px-2 py-0.5 rounded text-white font-mono text-[10px]">Cards</span>
-                </div>
-                <div className="flex items-center gap-1 text-[11px] text-emerald-300 font-medium">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>256-Bit SSL Encrypted</span>
-                </div>
-              </div>
+            {/* Payment Method Switcher Tabs */}
+            <div className="flex bg-stone-100 p-1.5 rounded-2xl border border-stone-200 gap-1.5">
+              <button
+                type="button"
+                onClick={() => setPaymentMode('upi_qr')}
+                className={`flex-1 py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                  paymentMode === 'upi_qr' 
+                    ? 'bg-[#0b3b24] text-white shadow-sm' 
+                    : 'text-stone-600 hover:text-stone-900'
+                }`}
+              >
+                <QrCode className="w-4 h-4" />
+                <span>Scan & Pay via UPI (Aruna S)</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setPaymentMode('razorpay')}
+                className={`flex-1 py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                  paymentMode === 'razorpay' 
+                    ? 'bg-[#0c2340] text-white shadow-sm' 
+                    : 'text-stone-600 hover:text-stone-900'
+                }`}
+              >
+                <CreditCard className="w-4 h-4" />
+                <span>Razorpay (Cards / NetBanking)</span>
+              </button>
             </div>
+
+            {/* TAB A: ARUNA S UPI QR SCANNER (MATCHING UPLOADED IMAGE) */}
+            {paymentMode === 'upi_qr' && (
+              <div className="bg-white rounded-2xl border-2 border-emerald-500/40 p-4 sm:p-5 shadow-md space-y-4 animate-in fade-in duration-150">
+                
+                {/* Header Strip with Aruna S Avatar */}
+                <div className="flex items-center justify-between pb-3 border-b border-stone-100">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-9 h-9 rounded-full bg-[#345c7d] text-white font-bold flex items-center justify-center text-sm shadow-xs">
+                      A
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-stone-900 text-sm leading-tight">Aruna S</h4>
+                      <p className="text-[11px] text-emerald-700 font-semibold">Official UPI QR Scanner</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-[10px] text-stone-400 uppercase font-semibold">Payable Amount</div>
+                    <div className="text-base font-extrabold text-[#0b3b24]">
+                      ₹{grandTotal.toLocaleString('en-IN')}
+                    </div>
+                  </div>
+                </div>
+
+                {/* QR Code Card View */}
+                <div className="flex flex-col items-center justify-center space-y-3 py-1">
+                  <div className="bg-white p-3 rounded-2xl border-2 border-stone-200 shadow-md relative group">
+                    <img 
+                      src={arunaQrImg} 
+                      alt="Aruna S UPI QR Scanner" 
+                      className="w-48 h-48 sm:w-56 sm:h-56 object-contain rounded-xl"
+                    />
+                  </div>
+
+                  <p className="text-xs font-semibold text-stone-600">
+                    Scan to pay with any UPI app
+                  </p>
+
+                  {/* UPI ID Strip with 1-Tap Copy */}
+                  <div className="flex items-center gap-2 bg-stone-100 hover:bg-stone-200/80 transition-colors px-3.5 py-2 rounded-xl border border-stone-200 max-w-sm w-full justify-between">
+                    <div className="flex items-center gap-2 truncate text-xs">
+                      <span className="text-stone-400 font-medium">UPI ID:</span>
+                      <strong className="font-mono text-stone-900 select-all">{UPI_ID}</strong>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={handleCopyUpi}
+                      className="shrink-0 flex items-center gap-1 text-[11px] font-bold text-[#0b3b24] bg-white hover:bg-emerald-50 px-2.5 py-1 rounded-lg border border-stone-200 shadow-2xs transition-colors cursor-pointer"
+                    >
+                      {copiedUpi ? (
+                        <>
+                          <Check className="w-3.5 h-3.5 text-emerald-600" />
+                          <span>Copied!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-3.5 h-3.5" />
+                          <span>Copy</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Mobile Direct UPI Intent Button */}
+                <div className="pt-2 border-t border-stone-100 flex flex-col sm:flex-row gap-2">
+                  <button
+                    type="button"
+                    onClick={handleOpenMobileUpiApp}
+                    className="flex-1 bg-stone-50 hover:bg-emerald-50 border border-stone-200 hover:border-emerald-300 text-stone-800 text-xs font-bold py-2.5 px-3 rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <Smartphone className="w-4 h-4 text-emerald-700" />
+                    <span>Pay with GPay / PhonePe / Paytm</span>
+                  </button>
+                </div>
+
+                {/* Accepted App Badges */}
+                <div className="pt-2 flex flex-wrap items-center justify-center gap-2 text-[10px] text-stone-500 font-medium">
+                  <span className="bg-stone-100 px-2 py-0.5 rounded text-stone-700">Google Pay</span>
+                  <span className="bg-stone-100 px-2 py-0.5 rounded text-stone-700">PhonePe</span>
+                  <span className="bg-stone-100 px-2 py-0.5 rounded text-stone-700">Paytm</span>
+                  <span className="bg-stone-100 px-2 py-0.5 rounded text-stone-700">BHIM</span>
+                  <span className="bg-stone-100 px-2 py-0.5 rounded text-stone-700">super.money</span>
+                  <span className="bg-stone-100 px-2 py-0.5 rounded text-stone-700">Navi</span>
+                </div>
+              </div>
+            )}
+
+            {/* TAB B: RAZORPAY ONLINE CARD */}
+            {paymentMode === 'razorpay' && (
+              <div className="bg-linear-to-br from-[#0c2340] to-[#07192d] text-white p-4 sm:p-5 rounded-2xl border-2 border-sky-500/40 shadow-lg relative overflow-hidden animate-in fade-in duration-150">
+                <div className="flex items-start justify-between relative z-10">
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+                      <span className="text-[11px] font-extrabold uppercase tracking-widest text-sky-300">
+                        Razorpay Trusted Partner
+                      </span>
+                    </div>
+                    <h4 className="text-base sm:text-lg font-bold text-white flex items-center gap-1.5">
+                      <span>Razorpay Secure Payment</span>
+                      <Lock className="w-4 h-4 text-amber-400" />
+                    </h4>
+                    <p className="text-xs text-sky-100/80 leading-relaxed max-w-md">
+                      Instant checkout with Cards (Credit/Debit), NetBanking, and Wallets.
+                    </p>
+                  </div>
+
+                  <div className="bg-white/10 px-3 py-1.5 rounded-xl border border-white/20 text-right shrink-0">
+                    <div className="text-[10px] text-sky-200">Official Link</div>
+                    <div className="font-mono text-xs font-bold text-amber-300">@thalirboutique</div>
+                  </div>
+                </div>
+
+                {/* Supported Payment Logos strip */}
+                <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-[11px] text-sky-200">
+                  <div className="flex items-center gap-2 font-semibold">
+                    <span className="bg-white/10 px-2 py-0.5 rounded text-white font-mono text-[10px]">Cards</span>
+                    <span className="bg-white/10 px-2 py-0.5 rounded text-white font-mono text-[10px]">NetBanking</span>
+                    <span className="bg-white/10 px-2 py-0.5 rounded text-white font-mono text-[10px]">UPI</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-[11px] text-emerald-300 font-medium">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                    <span>256-Bit SSL Encrypted</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
           </div>
 
           {/* 5. Order Pricing Breakdown */}
@@ -739,31 +885,38 @@ export const CheckoutModal = () => {
             {/* WhatsApp Alternative Order Button */}
             <button
               type="button"
-              onClick={() => handlePayWithRazorpay('whatsapp')}
+              onClick={() => handleProcessOrder('whatsapp')}
               disabled={isProcessingPayment}
               className="p-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl shadow-xs transition-colors cursor-pointer"
-              title="Order & Pay via WhatsApp"
+              title="Order & Send on WhatsApp"
             >
               <MessageCircle className="w-5 h-5 fill-white" />
             </button>
 
-            {/* Primary Razorpay Action Button */}
+            {/* Primary Action Button */}
             <button
               type="button"
-              onClick={() => handlePayWithRazorpay('site')}
+              onClick={() => handleProcessOrder('site')}
               disabled={isProcessingPayment}
-              className="flex-1 sm:flex-none bg-[#0c2340] hover:bg-[#07192d] active:scale-[0.98] text-white font-extrabold py-3.5 px-7 rounded-2xl text-sm sm:text-base shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 border border-sky-400/30"
+              className={`flex-1 sm:flex-none active:scale-[0.98] text-white font-extrabold py-3.5 px-7 rounded-2xl text-sm sm:text-base shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 ${
+                paymentMode === 'upi_qr'
+                  ? 'bg-[#0b3b24] hover:bg-[#072617] border border-emerald-400/30'
+                  : 'bg-[#0c2340] hover:bg-[#07192d] border border-sky-400/30'
+              }`}
             >
               {isProcessingPayment ? (
                 <>
                   <Loader2 className="w-5 h-5 animate-spin text-white" />
-                  <span>Processing Payment...</span>
+                  <span>Confirming Order...</span>
                 </>
               ) : (
                 <>
-                  <Lock className="w-4 h-4 text-sky-300" />
-                  <span>Pay ₹{grandTotal.toLocaleString('en-IN')} with Razorpay</span>
-                  <ExternalLink className="w-4 h-4 text-sky-300" />
+                  <CheckCircle2 className="w-4 h-4 text-amber-300" />
+                  <span>
+                    {paymentMode === 'upi_qr' 
+                      ? `I Have Paid ₹${grandTotal.toLocaleString('en-IN')} - Confirm Order` 
+                      : `Pay ₹${grandTotal.toLocaleString('en-IN')} with Razorpay`}
+                  </span>
                 </>
               )}
             </button>
