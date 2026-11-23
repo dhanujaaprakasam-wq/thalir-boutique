@@ -30,10 +30,10 @@ export const StoreProvider = ({ children }) => {
   const [products, setProducts] = useState(() => {
     // Purge stale local storage products to guarantee fresh sync with Django database
     try {
-      const cleanupVersion = localStorage.getItem('tb_clean_db_sync_v6');
+      const cleanupVersion = localStorage.getItem('tb_clean_db_sync_v7');
       if (!cleanupVersion) {
         localStorage.removeItem('tb_products');
-        localStorage.setItem('tb_clean_db_sync_v6', 'true');
+        localStorage.setItem('tb_clean_db_sync_v7', 'true');
       }
     } catch (e) {}
 
@@ -1109,7 +1109,7 @@ export const StoreProvider = ({ children }) => {
     if (!orderToDeduct || !orderToDeduct.items) return;
 
     setProducts(prevProducts => {
-      return prevProducts.map(prod => {
+      const updatedProds = prevProducts.map(prod => {
         let updatedVariants = [...(prod.variants || [])];
         let hasChange = false;
 
@@ -1141,13 +1141,23 @@ export const StoreProvider = ({ children }) => {
         });
 
         if (hasChange) {
+          const newTotal = updatedVariants.reduce((sum, v) => sum + Number(v.stockQty || v.stock_qty || 0), 0);
           return {
             ...prod,
+            totalStock: newTotal,
+            inStock: newTotal > 0,
+            isSoldOut: newTotal <= 0,
             variants: updatedVariants
           };
         }
         return prod;
       });
+
+      try {
+        localStorage.setItem('tb_products', JSON.stringify(updatedProds));
+      } catch (e) {}
+
+      return updatedProds;
     });
   };
 
@@ -1200,10 +1210,15 @@ export const StoreProvider = ({ children }) => {
   // Order actions
   const recordOrder = async (orderData) => {
     const isDirectInStore = ['direct_shop', 'in_store', 'direct', 'manual'].includes(orderData.channel);
+    const isPaidOnline = orderData.status === 'Payment Confirmed' || 
+      Boolean(orderData.paymentMethod && orderData.paymentMethod.toLowerCase().includes('razorpay')) ||
+      Boolean(orderData.payment_method && orderData.payment_method.toLowerCase().includes('razorpay'));
+    const shouldDeduct = isDirectInStore || isPaidOnline || Boolean(orderData.is_stock_deducted);
+    
     const enhancedOrder = {
       ...orderData,
-      is_stock_deducted: isDirectInStore, // In-Store sales are always sold; website/whatsapp default to false
-      status: isDirectInStore ? 'Payment Confirmed' : (orderData.status || 'Pending Verification'),
+      is_stock_deducted: shouldDeduct,
+      status: shouldDeduct ? 'Payment Confirmed' : (orderData.status || 'Pending Verification'),
       userId: user ? user.id : 'guest',
       userEmail: user ? user.email : orderData.customer?.email,
       paymentProofImage: orderData.paymentProofImage || orderData.payment_proof_image || null,
@@ -1212,7 +1227,7 @@ export const StoreProvider = ({ children }) => {
     setOrders(prev => [enhancedOrder, ...prev]);
     setCompletedOrder(enhancedOrder);
     
-    if (isDirectInStore) {
+    if (shouldDeduct) {
       deductStockForOrder(enhancedOrder);
     }
 
