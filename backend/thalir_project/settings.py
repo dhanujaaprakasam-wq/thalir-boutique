@@ -95,9 +95,9 @@ else:
     MEDIA_URL = '/media/'
     MEDIA_ROOT = BASE_DIR / 'media'
 
-# Payment Gateway Configuration (Razorpay)
-RAZORPAY_KEY_ID = os.environ.get('RAZORPAY_KEY_ID', 'rzp_test_thalir_boutique')
-RAZORPAY_KEY_SECRET = os.environ.get('RAZORPAY_KEY_SECRET', 'test_secret_key')
+# Payment Gateway Configuration (Razorpay Live)
+RAZORPAY_KEY_ID = os.environ.get('RAZORPAY_KEY_ID', 'rzp_live_U3ZuVy8lgIl7IW')
+RAZORPAY_KEY_SECRET = os.environ.get('RAZORPAY_KEY_SECRET', 'HwJTcTWH7EKNii3MUdSH26Po')
 
 # WhatsApp Cloud API Configuration
 WHATSAPP_API_TOKEN = os.environ.get('WHATSAPP_API_TOKEN', '')

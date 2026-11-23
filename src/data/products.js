@@ -8,6 +8,7 @@ export const STORE_INFO = {
   upiPayeeName: "Aruna S",
   upiQrImage: "/assets/images/media_1791352967848.jpg",
   razorpayUrl: "https://razorpay.me/@thalirboutique",
+  razorpayKeyId: "rzp_live_U3ZuVy8lgIl7IW",
   address: "5/797, NC Colony, Kumarapalayam Main Road, Veppadai, Namakkal – 638008, Tamil Nadu",
   instagramUrl: "https://www.instagram.com/thalir_boutique_/",
   instagramHandle: "@thalir_boutique_",

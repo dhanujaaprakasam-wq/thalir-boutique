@@ -228,97 +228,155 @@ export const CheckoutModal = () => {
     setIsProcessingPayment(true);
 
     const orderId = `TB-${Date.now().toString().slice(-6)}`;
+    const liveKeyId = import.meta.env.VITE_RAZORPAY_KEY_ID || storeInfo.razorpayKeyId || 'rzp_live_U3ZuVy8lgIl7IW';
 
-    // Build Complete Confirmed Order Object
-    const finalizedOrder = {
-      orderId,
-      id: orderId,
-      timestamp: new Date().toISOString(),
-      date: new Date().toLocaleDateString('en-GB'),
-      customer: {
-        fullName: formData.fullName.trim(),
-        mobile: cleanMobile.slice(-10),
-        altMobile: formData.altMobile ? formData.altMobile.trim() : '',
-        email: formData.email ? formData.email.trim() : '',
-        address: formData.address.trim(),
-        city: formData.city.trim(),
-        pincode: cleanPin,
-        landmark: formData.landmark ? formData.landmark.trim() : '',
-        distance_km: shippingInfo?.distanceKm || null,
-        delivery_tier: shippingInfo?.tier || 'Distance Delivery'
-      },
-      orderNotes: formData.orderNotes || '',
-      items: cart.map(item => ({
-        productId: item.id,
-        name: item.name,
-        color: item.color,
-        size: item.size || 'Free Size',
-        qty: Number(item.qty || 1),
-        price: Number(item.price),
-        image: item.image,
-        code: item.code || item.productCode || item.id
-      })),
-      coupon_code: appliedCoupon ? appliedCoupon.code : null,
-      discount_amount: cartDiscount || 0,
-      pricing: {
-        subtotal: cartSubtotal,
-        couponCode: appliedCoupon ? appliedCoupon.code : null,
-        discountAmount: cartDiscount || 0,
-        deliveryCharge,
-        deliveryFee: deliveryCharge,
-        shippingFee: deliveryCharge,
-        distanceKm: shippingInfo?.distanceKm || null,
-        grandTotal
-      },
-      paymentMethod: 'Razorpay Online',
-      payment_method: 'Razorpay Online',
-      paymentProof: 'Auto-Confirmed via Razorpay',
-      razorpay_payment_link: RAZORPAY_URL,
-      channel,
-      status: 'Payment Confirmed', // Auto-confirm order with admin!
-      is_stock_deducted: true     // Deduct stock properly!
+    const executeOrderFinalization = async (paymentId = '') => {
+      // Build Complete Confirmed Order Object
+      const finalizedOrder = {
+        orderId,
+        id: orderId,
+        timestamp: new Date().toISOString(),
+        date: new Date().toLocaleDateString('en-GB'),
+        customer: {
+          fullName: formData.fullName.trim(),
+          mobile: cleanMobile.slice(-10),
+          altMobile: formData.altMobile ? formData.altMobile.trim() : '',
+          email: formData.email ? formData.email.trim() : '',
+          address: formData.address.trim(),
+          city: formData.city.trim(),
+          pincode: cleanPin,
+          landmark: formData.landmark ? formData.landmark.trim() : '',
+          distance_km: shippingInfo?.distanceKm || null,
+          delivery_tier: shippingInfo?.tier || 'Distance Delivery'
+        },
+        orderNotes: formData.orderNotes || '',
+        items: cart.map(item => ({
+          productId: item.id,
+          name: item.name,
+          color: item.color,
+          size: item.size || 'Free Size',
+          qty: Number(item.qty || 1),
+          price: Number(item.price),
+          image: item.image,
+          code: item.code || item.productCode || item.id
+        })),
+        coupon_code: appliedCoupon ? appliedCoupon.code : null,
+        discount_amount: cartDiscount || 0,
+        pricing: {
+          subtotal: cartSubtotal,
+          couponCode: appliedCoupon ? appliedCoupon.code : null,
+          discountAmount: cartDiscount || 0,
+          deliveryCharge,
+          deliveryFee: deliveryCharge,
+          shippingFee: deliveryCharge,
+          distanceKm: shippingInfo?.distanceKm || null,
+          grandTotal
+        },
+        paymentMethod: 'Razorpay Online',
+        payment_method: 'Razorpay Online',
+        paymentProof: paymentId ? `Payment ID: ${paymentId}` : 'Auto-Confirmed via Razorpay',
+        razorpay_payment_id: paymentId,
+        razorpay_payment_link: RAZORPAY_URL,
+        channel,
+        status: 'Payment Confirmed', // Auto-confirm order with admin!
+        is_stock_deducted: true     // Deduct stock properly!
+      };
+
+      // 1. Deduct Stock & Record Confirmed Order in Store Context & Django DB
+      await recordOrder(finalizedOrder);
+
+      // 2. Auto-notify Admin on WhatsApp with full order details
+      try {
+        await api.sendWhatsAppNotification({
+          phone: storeInfo.whatsappNumber || '916382218590',
+          order_id: orderId,
+          customer_name: formData.fullName,
+          amount: grandTotal,
+          tracking_url: `${window.location.origin}/orders/${orderId}`,
+          event_type: 'order_confirmed'
+        });
+      } catch (e) {
+        console.warn('Admin WA notice status:', e);
+      }
+
+      // 3. If ordered via WhatsApp, also trigger direct customer chat with invoice
+      if (channel === 'whatsapp') {
+        const taxInvoiceMsg = formatTaxInvoiceReceipt(finalizedOrder, {
+          phone: storeInfo.phone || '+91 6382218590',
+          paymentStatus: 'Prepaid via Razorpay (Auto-Confirmed)'
+        });
+        const waUrl = `https://wa.me/${storeInfo.whatsappNumber}?text=${encodeURIComponent(taxInvoiceMsg)}`;
+        window.open(waUrl, '_blank');
+      }
+
+      // 4. Trigger celebratory confetti
+      try {
+        confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+      } catch (e) {}
+
+      setIsProcessingPayment(false);
     };
 
-    // 1. Deduct Stock & Record Confirmed Order in Store Context & Django DB
-    await recordOrder(finalizedOrder);
-
-    // 2. Open Razorpay official payment page in a new window for customer
-    try {
-      window.open(RAZORPAY_URL, '_blank');
-    } catch (e) {
-      console.warn('Window open notice:', e);
-    }
-
-    // 3. Auto-notify Admin on WhatsApp with full order details
-    try {
-      await api.sendWhatsAppNotification({
-        phone: storeInfo.whatsappNumber || '916382218590',
-        order_id: orderId,
-        customer_name: formData.fullName,
-        amount: grandTotal,
-        tracking_url: `${window.location.origin}/orders/${orderId}`,
-        event_type: 'order_confirmed'
-      });
-    } catch (e) {
-      console.warn('Admin WA notice status:', e);
-    }
-
-    // 4. If ordered via WhatsApp, also trigger direct customer chat with invoice
+    // If channel is WhatsApp, finalize directly
     if (channel === 'whatsapp') {
-      const taxInvoiceMsg = formatTaxInvoiceReceipt(finalizedOrder, {
-        phone: storeInfo.phone || '+91 6382218590',
-        paymentStatus: 'Prepaid via Razorpay (Auto-Confirmed)'
-      });
-      const waUrl = `https://wa.me/${storeInfo.whatsappNumber}?text=${encodeURIComponent(taxInvoiceMsg)}`;
-      window.open(waUrl, '_blank');
+      window.open(RAZORPAY_URL, '_blank');
+      await executeOrderFinalization('WhatsApp Order Link');
+      return;
     }
 
-    // 5. Trigger celebratory confetti
-    try {
-      confetti({ particleCount: 100, spread: 80, origin: { y: 0.6 } });
-    } catch (e) {}
+    // Try Official Razorpay Live Checkout SDK first
+    if (typeof window !== 'undefined' && window.Razorpay) {
+      try {
+        const rzpOptions = {
+          key: liveKeyId,
+          amount: Math.round(grandTotal * 100), // in paise
+          currency: 'INR',
+          name: 'Thalir Boutique',
+          description: `Order #${orderId} - ${cart.length} Saree(s)`,
+          image: logoImg,
+          prefill: {
+            name: formData.fullName.trim(),
+            contact: cleanMobile.slice(-10),
+            email: formData.email ? formData.email.trim() : ''
+          },
+          notes: {
+            order_id: orderId,
+            address: formData.address.trim(),
+            city: formData.city.trim(),
+            pincode: cleanPin
+          },
+          theme: {
+            color: '#0b3b24'
+          },
+          modal: {
+            ondismiss: function() {
+              setIsProcessingPayment(false);
+            }
+          },
+          handler: async function (response) {
+            console.log('Razorpay live payment success:', response);
+            await executeOrderFinalization(response.razorpay_payment_id || 'RZP_PAID');
+          }
+        };
 
-    setIsProcessingPayment(false);
+        const rzpInstance = new window.Razorpay(rzpOptions);
+        rzpInstance.on('payment.failed', function (resp) {
+          setIsProcessingPayment(false);
+          const errDesc = resp?.error?.description || 'Transaction unsuccessful';
+          setFormError(`Payment failed: ${errDesc}`);
+          if (showToast) showToast(`Payment failed: ${errDesc}`);
+        });
+
+        rzpInstance.open();
+        return;
+      } catch (sdkErr) {
+        console.warn('Razorpay SDK modal error, using direct link:', sdkErr);
+      }
+    }
+
+    // Fallback: Open official razorpay.me link directly
+    window.open(RAZORPAY_URL, '_blank');
+    await executeOrderFinalization('Direct Razorpay Link');
   };
 
   if (!isCheckoutOpen) return null;
