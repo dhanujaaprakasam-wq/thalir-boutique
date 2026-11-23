@@ -30,10 +30,10 @@ export const StoreProvider = ({ children }) => {
   const [products, setProducts] = useState(() => {
     // Purge stale local storage products to guarantee fresh sync with Django database
     try {
-      const cleanupVersion = localStorage.getItem('tb_clean_db_sync_v5');
+      const cleanupVersion = localStorage.getItem('tb_clean_db_sync_v6');
       if (!cleanupVersion) {
         localStorage.removeItem('tb_products');
-        localStorage.setItem('tb_clean_db_sync_v5', 'true');
+        localStorage.setItem('tb_clean_db_sync_v6', 'true');
       }
     } catch (e) {}
 
