@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE || '/api';
+const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_BASE) || '/api';
 
 const normalizeProduct = (p) => {
   const resolvedCode = p.code || (typeof p.id === 'string' && p.id.startsWith('tb-') ? p.id.toUpperCase() : (p.code || String(p.id)));
