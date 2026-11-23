@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thalir Boutique | Trending Sarees & Ethnic Wear</title>
+    <meta name="description" content="Discover trending Sarees, designer Kurtis, premium Blouse Materials, Inskirts, Chudi Materials, and comfortable Night Wear at Thalir Boutique, Veppadai, Namakkal." />
+    <meta name="theme-color" content="#073822" />
+
+    <!-- Open Graph / WhatsApp / Facebook Rich Link Previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Thalir Boutique | Trending Sarees & Ethnic Wear" />
+    <meta property="og:description" content="Discover trending South Indian Sarees, designer Kurtis, Blouse Materials & Ethnic Wear at Thalir Boutique, Veppadai, Namakkal." />
+    <meta property="og:image" content="/assets/images/favicon.jpg" />
+    <meta property="og:site_name" content="Thalir Boutique" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Thalir Boutique | Trending Sarees & Ethnic Wear" />
+    <meta name="twitter:description" content="Discover trending South Indian Sarees, designer Kurtis, Blouse Materials & Ethnic Wear at Thalir Boutique, Veppadai, Namakkal." />
+
+    <!-- Website Icon / Favicon & PWA Manifest -->
+    <link rel="icon" type="image/jpeg" href="/assets/images/favicon.jpg" />
+    <link rel="apple-touch-icon" href="/assets/images/favicon.jpg" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Razorpay Checkout SDK for Automated UPI Intent & Card Payments -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <!-- Google Identity Services (GIS) for Real-Time Google Sign-In -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body class="bg-[#FAF8F5]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Register PWA Service Worker for App Installation
+      if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>

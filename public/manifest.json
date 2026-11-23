@@ -1,0 +1,22 @@
+{
+  "short_name": "Thalir",
+  "name": "Thalir Boutique | Sarees & Ethnic Wear",
+  "description": "Trending South Indian Sarees, Designer Kurtis & Boutique Ethnic Wear at Veppadai, Namakkal.",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.jpg",
+      "type": "image/jpeg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/images/favicon.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#FAF8F5",
+  "theme_color": "#073822",
+  "display": "standalone",
+  "orientation": "portrait"
+}
