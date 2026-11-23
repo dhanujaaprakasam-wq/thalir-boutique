@@ -82,7 +82,7 @@ export const UserPanel = () => {
     }
   }, [user]);
 
-  if (!isUserPanelOpen || !user || user.role === 'Admin') return null;
+  if (!isUserPanelOpen || !user) return null;
 
   const handleSaveAddress = (e) => {
     e.preventDefault();

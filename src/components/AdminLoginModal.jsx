@@ -13,14 +13,22 @@ export const AdminLoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
 
   const handleAdminLogin = (e) => {
     e.preventDefault();
-    if (username.trim() === 'admin' && password === 'admin123') {
+    const cleanUser = username.trim().toLowerCase();
+    const cleanPhone = cleanUser.replace(/\D/g, '');
+    const isAuthorizedAdmin = 
+      (cleanUser === 'admin' && (password === 'admin123' || password === 'Dhanujaa@26')) ||
+      (cleanUser === 'sudhi' && (password === 'Dhanujaa@26' || password === 'admin123')) ||
+      (cleanPhone === '6382218590' && (password === 'Dhanujaa@26' || password === 'admin123')) ||
+      (cleanUser === 'dhanujaa' && (password === 'Dhanujaa@26' || password === 'admin123'));
+
+    if (isAuthorizedAdmin) {
       setErrorMsg('');
       setUsername('');
       setPassword('');
       onLoginSuccess();
       onClose();
     } else {
-      setErrorMsg(language === 'ta' ? 'தவறான நிர்வாக நற்சான்றிதழ்கள். பயனர் பெயர் "admin" மற்றும் கடவுச்சொல் "admin123" ஐப் பயன்படுத்தவும்.' : 'Invalid admin credentials. Use username "admin" and password "admin123".');
+      setErrorMsg(language === 'ta' ? 'தவறான நிர்வாக நற்சான்றிதழ்கள். சரியான பயனர் பெயர் மற்றும் கடவுச்சொல்லை உள்ளிடவும்.' : 'Invalid admin credentials. Please enter your valid administrator credentials.');
     }
   };
 

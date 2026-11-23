@@ -560,7 +560,9 @@ export const StoreProvider = ({ children }) => {
       addresses: userData.addresses || []
     };
 
-    if (loggedUser.role !== 'Admin') {
+    if (loggedUser.role === 'Admin') {
+      localStorage.setItem('tb_admin_authenticated', 'true');
+    } else {
       localStorage.setItem('tb_user_login_time', String(loginTimestamp));
     }
 
